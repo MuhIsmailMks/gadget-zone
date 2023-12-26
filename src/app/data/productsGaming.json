@@ -1,0 +1,70 @@
+[
+  {
+      "id" : 1,
+      "nameProduct" : "Asus Rog",
+      "rating":5,
+      "favoriteCount":16,
+      "sales":43,
+      "price":1200,
+      "discountPrice":1500,
+      "imageUrl" : "/images/product1.jpg",
+      "newProduct" :true
+  },
+  {
+      "id" : 2,
+      "nameProduct" : "Bianchi Bike",
+      "rating":5,
+      "favoriteCount":13,
+      "sales":13,
+      "price":3499,
+      "discountPrice":3599,
+      "imageUrl" : "/images/product2.jpg"
+  },
+  {
+      "id" : 3,
+      "nameProduct" : "Hair Dryer",
+      "rating":3,
+      "favoriteCount":13,
+      "sales":4,
+      "price":80,
+      "discountPrice":9.99,
+      "imageUrl" : "/images/product3.webp"
+  },
+  {
+      "id" : 4,
+      "nameProduct" : "Case Iphone 13",
+      "rating":3,
+      "favoriteCount":13,
+      "sales":89,
+      "price":12,
+      "imageUrl" : "/images/product4.jpg"
+  },
+  {
+      "id" : 5,
+      "nameProduct" : "Mouse Logitech",
+      "rating":3,
+      "favoriteCount":13,
+      "sales":24,
+      "price":80.99, 
+      "discount":14.01,
+      "imageUrl" : "/images/product6.jpg"
+  },
+  {
+      "id" : 6,
+      "nameProduct" : "Asus TUF Monitor",
+      "rating":3,
+      "favoriteCount":13,
+      "sales":43,
+      "price":2000,
+      "imageUrl" : "/images/product7.jpg"
+  },
+  {
+      "id" : 7,
+      "nameProduct" : "Mousepad",
+      "rating":3,
+      "favoriteCount":13,
+      "sales":21,
+      "price":30,
+      "imageUrl" : "/images/product8.jpg"
+  }
+]

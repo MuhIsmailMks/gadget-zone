@@ -1,0 +1,172 @@
+:root{
+    --primary-color:#439CEF;
+
+    --font-lato: 'Lato', sans-serif;
+    --font-plusJakarta: 'Plus Jakarta Sans', sans-serif;
+    --font-kodcashan: 'Kodchasan', sans-serif;
+}
+
+
+/* navigation section styles */
+body{
+    @apply h-[auto] s-desktop:pt-[4rem] phone:pt-[2rem];
+}
+
+nav ul li{   
+    @apply w-[120px] h-[25px] relative flex items-center justify-center mobile:h-[40px] mobile:w-full phone:mt-5;
+}
+ 
+nav  ul li a{   
+    @apply font-kufam font-[500] relative text-[#5A5A5A] ease-in-out duration-200 xl-tablet:text-[.9rem]
+    s-tablet:text-[.7rem] mobile:text-right  mobile:w-full  mobile:h-full  mobile:flex  mobile:items-center  mobile:justify-center xl-phone:text-[.7rem] x-phone:text-[.65rem] phone:w-[100px]
+    ; 
+}
+ 
+nav ul li a.active{
+    @apply text-black;
+}
+  
+nav li:hover:not(li:last-child) a{
+    @apply text-primary-color ease-in;
+}
+ 
+ 
+nav ul li a.active::before{
+    content: "";
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: var(--primary-color); 
+}
+
+/* active menu nav */
+nav #noActiveMenu{
+    @apply mobile:opacity-0 mobile:duration-300 mobile:ease-in-out mobile:z-[-2];
+}
+
+nav #activeMenu{
+    @apply duration-300 ease-in-out bg-white opacity-100 z-10;
+}
+
+ 
+
+/* slide .hero-product */
+.hero-product .swiper{
+    @apply h-full;
+}
+
+
+/* button slide */ 
+.swiper-button-prev::after, 
+.swiper-button-next::after{
+    @apply hidden; 
+}
+
+.hero-product .swiper-button-prev, 
+.hero-product .swiper-button-next{
+    @apply w-[60px] h-[60px] overflow-auto max-s-desktop:w-[48px] max-s-desktop:h-[48px] xl-tablet:h-[45px] xl-tablet:w-[45px] s-tablet:h-[35px] s-tablet:w-[35px]  xl-phone:h-[35px] xl-phone:w-[35px] x-phone:h-[23px] x-phone:w-[23px];   
+}
+
+.hero-product .swiper-button-prev{
+    @apply left-[1rem]; 
+}
+
+.hero-product .swiper-button-next{
+    @apply right-[1rem];  
+}
+
+/* pagination slide .hero-product */
+div.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal{ 
+    position: absolute;  
+}
+
+div.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal span{
+    @apply bg-[white] duration-300 x-phone:h-[5px] x-phone:w-[5px];
+}
+
+div.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal > span.swiper-pagination-bullet.swiper-pagination-bullet-active{
+    @apply bg-primary-color w-[30px] x-phone:w-[20px] rounded-md;
+}
+
+
+
+
+/* button image slide .hero-product */
+.swiper-button-prev::before, 
+.swiper-button-next::before{
+    content: "";
+    @apply   bg-no-repeat bg-center bg-contain bg-[url('../app/icons/nextButton.svg')] absolute w-full h-full  ;
+}
+
+.swiper-button-prev::before{
+    @apply bg-[url('../app/icons/prevButton.svg')];
+}
+
+
+
+
+
+
+/* specials products */
+.small-box .bg-image::before{
+    content: "";
+    @apply absolute shadow shadow-smallBoxShadow1 phone:shadow-smallBoxShadowPhone1 top-[40%];
+    left: 55%; 
+
+    color: rgba(255, 255, 255, 0.452); 
+}
+
+.small-box img,
+.large-box .image-product,
+.medium-box .image-product{ 
+    @apply duration-300 ease-in-out;
+}
+
+.small-box:hover img,
+.medium-box:hover .image-product,
+.large-box:hover .image-product{
+    @apply scale-[1.1] ;
+    @apply duration-300 ease-in-out;
+}
+
+
+/* products */
+.card-product:hover img:not(.bag-icon img,.stars-container img,.add-bag img){
+    @apply w-[60%];
+}
+
+.products-title h2::before{  
+    @apply  content-[""] w-full absolute h-[3px] bg-primary-color left-0 bottom-0;
+}
+
+.FavoriteIcon{ 
+   font-size: 70rem;
+}
+
+.FavoriteIcon svg{
+    @apply w-[18px] h-[23px] tablet:w-[13px] tablet:h-[19px] phone:w-[10px] phone:h-[15];
+   font-size: 50%;
+}
+
+.css-u3zwgl-MuiSvgIcon-root{
+    @apply w-[18px] h-[23px] tablet:w-[13px] tablet:h-[19px] phone:w-[10px] phone:h-[15];
+}
+ 
+  
+/* bag */
+.bag-container.active{
+    @apply bg-[#F5F5F5] duration-[.4s] ease-in-out translate-y-[0%] border-l rounded-[30px] ;
+}
+ 
+.bag-product-list p{
+    @apply w-[90px] text-center font-sans font-[500];
+}
+
+.container-in-total{
+    @apply w-full flex justify-between;
+}

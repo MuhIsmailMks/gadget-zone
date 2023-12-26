@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>
+
+        https://framer.com/m/framer/Animator.js
+    </p>
+
+    <div class="card">
+        <div class="image"><img src="/src/app/images/earbuds.png" alt=""></div>
+        <div class="name-product">Earbuds</div>
+        <div class="price">40$</div>
+    </div>
+    <div class="card">
+        <div class="image"><img src="/src/app/images/fold5.jpg" alt=""></div>
+        <div class="name-product">samsung galaxy fold</div>
+        <div class="price">2000$</div>
+    </div>
+    <div class="card">
+        <div class="image"><img src="/src/app/images/microphoneElgato.webp" alt=""></div>
+        <div class="name-product">microphone Elgato</div>
+        <div class="price">120$</div>
+    </div>
+
+
+    <div class="material">
+        // for card 
+        const [countFavorite,setCountFavorite] = useState(dataProducts);
+      
+        const handleFavoriteCard = (i) => {
+          const updateProducts = [...dataProducts];
+          updateProducts[i].favoriteState = !updateProducts[i].favoriteState
+      
+          if(updateProducts[i].favoriteState){
+            updateProducts[i].favoriteCount += 1
+          } else {
+            updateProducts[i].favoriteCount -= 1
+          }
+      
+          setCountFavorite(updateProducts)
+        }
+
+         
+    </div>
+
+   
+    
+    <script>
+        const ga = `
+        {
+            dataProducts.map((product,i) => {
+              return <div className="w-[220px] h-[100%] bg-[grey]" key={i}>
+                <p>{product.nameProducts}</p>
+
+                <div className="icon flex gap-4">
+                  
+                  <button onClick={() => handleFavoriteCard(i)}> 
+                  {
+                    product.favoriteState ? <Favorite sx={{ color: pink[600] }} /> : <FavoriteBorder />
+                  }
+                   </button>
+                  <p>{product.favoriteCount}</p>
+                </div>
+                
+              </div>
+            })
+          }
+        `
+
+        let product = [
+            {
+                category:'bedroom',
+                nameProduct:'bed Ax-7',
+                size:[
+                    "120 x 200",
+                    "200 x 200",
+                ],
+                price:[
+                    "250",
+                    "310",
+                ],
+                year: new Date("2023-03-02"),
+                material:"stainless steel"
+            }
+        ]
+    
+       /**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+  const count = {};
+var isAnagram = function(s, t) {
+  if (s.length !== t.length) {
+    return false; // Jika panjang kedua string tidak sama, maka bukan anagram
+  }
+
+
+  // Menghitung kemunculan setiap karakter dalam string s
+  for (let char of s) {
+    count[char] = (count[char] || 0) + 1;
+  }
+
+  // Mengurangi kemunculan setiap karakter dalam string t
+  for (let char of t) {
+    if (!count[char]) {
+      return false; // Jika karakter tidak ada dalam string s, bukan anagram
+    }
+    count[char]--;
+  }
+
+  // Memastikan setiap karakter dalam string t telah habis digunakan
+  for (let key in count) {
+    if (count[key] !== 0) {
+      return false; // Jika masih ada kemunculan karakter yang belum terpakai, bukan anagram
+    }
+  }
+
+
+  return true; 
+};
+    
+
+console.log(isAnagram('sa','aa'));
+  console.log(count);
+    </script>
+</body>
+</html>
