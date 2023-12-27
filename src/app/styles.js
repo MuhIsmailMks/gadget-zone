@@ -8,6 +8,10 @@ export const layout = {
     flexDirection: 'flex flex-col items-start',
 }
 
+export const styles = {
+    paddingY:''
+}
+
 export const dimension = {
     Wfull_hAuto : 'w-[full] h-[auto]',
 
@@ -19,9 +23,11 @@ export const dimension = {
     sectionProductTitleLine:'w-[50%] h-[3px] absolute bottom-0 left-0  bg-primary-color phone:h-[1.5px]',
 
 
+
+    // akan dihapus--------------------------------------------
     // special product container size
     specialProductContainer:" max-w-[1420px] my-[1rem] mx-auto px-[3.5rem] s_desktop-xl_tablet:px-[1.5rem] s-tablet:px-[1rem] s-tablet:flex-col s-tablet:gap-[1vw] s-tablet:items-center phone:px-[1rem] phone:flex-col phone:gap-[.45rem]",
-    specialProductLeftContainer:"x-desktop:h-[240px] s_desktop-xl_tablet:h-[17vw] gap-[1.5rem]  w-full s_desktop-xl_tablet:gap-[0rem]   s-tablet:h-[20vw]  s-tablet:gap-[0]  phone:h-[42vw] phone:min-h-[200px] phone:flex-col phone:gap-[0rem] phone:justify-between",
+    specialProductLeftContainer:"x-desktop:h-[240px] s_desktop-xl_tablet:h-[17vw] gap-[1.5rem]  w-full s_desktop-xl_tablet:gap-[0rem]   s-tablet:h-[20vw]  s-tablet:gap-[0]  phone:h-[72vw] phone:min-h-[200px] phone:flex-col phone:gap-[.8rem] phone:justify-between",
     specialProductRightContainer:" x-desktop:h-[500px] x-desktop:w-[364px] s_desktop-xl_tablet:h-[35.5vw] h-min-[400px] s_desktop-xl_tablet:w-[28%] s-tablet:h-[39vw]  s-tablet:w-[35%]  phone:h-[43vw] phone:w-[80%] phone:max-w-[240px]  phone:mx-auto  phone:min-h-[210px]" ,
 
     // special product size
@@ -38,7 +44,7 @@ export const dimension = {
     specialProductImageLarge:"h-[auto] x-desktop:w-[281px] s_desktop-xl_tablet:w-[80%] s-tablet:w-[70%] phone:w-[60%]", 
 
    // special product size small and medium for phone
-    specialProductPhoneSize:"phone:h-[49%] phone:w-[50%] phone:min-w-[240px] phone:max-w-[90%]",
+    specialProductPhoneSize:"phone:h-[59%] phone:w-[90%] phone:min-w-[240px] phone:max-w-[90%]",
     specialImageProductPhoneSize:"relative z-[2] phone:h-[100%] phone:w-[auto]",
 
    // special product text container small and medium 

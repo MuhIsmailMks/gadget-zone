@@ -6,15 +6,13 @@ import Image from "next/image";
 import { layout ,dimension} from '../styles';
 import  '../page.css';
 
-import { useSelector,useDispatch } from 'react-redux'; 
-
-
-import useShoppingBag,{ShoppingBagProvider} from '../context/ShoppingBagContext'
+import { useSelector,useDispatch } from 'react-redux';
  
 import { MenuButton } from './Components';  
 // image
 import logo from '../icons/logo.svg' 
 import { openBag } from '../GlobalRedux/Features/bagActions';
+import { RootState } from '../GlobalRedux/store';
 
 
 export default function Navigation() {
@@ -35,18 +33,21 @@ export default function Navigation() {
   };
   
   // store in bag
-  const bagItems = useSelector(state => state.shopping.products)
+  const bagItems = useSelector((state : RootState) => state.shopping.products)
   const quantity = bagItems.reduce((total,item) => total + item.quantity,0)
   
 
   return ( 
         <header className='fixed z-[995] left-0 top-0 w-full'> 
+
         <nav className="w-full px-[1.55rem] h-[80px] bg-white relative flex justify-between items-center s-tablet:px-[4rem]  xl-desktop:px-[10%] mobile:h-[55px] phone:h-[49px]  ">
 
-          <div className="logo w-auto phone:h-[30px] s-tablet:h-[40px] max-LTablet:relative ">
+          <div className="logo w-auto phone:h-[23px] tablet:h-[30px] ">
             <Image
-              src={logo}
+              src='/icons/web-icon.svg'
               alt="logo"
+              height={20}
+              width={20}
               className="h-full w-full object-contain"
             />
           </div>
@@ -87,7 +88,7 @@ export default function Navigation() {
                 alt={image.alt} 
                 width={20}
                 height={20}
-                className={`h-[37px] w-full object-contain tablet:h-[39px] s-tablet:h-[33px]  phone:h-[35px] x-phone:h-[29px]  relative `}
+                className={`h-[37px] w-full object-contain tablet:h-[39px] s-tablet:h-[33px]  phone:h-[35px] x-phone:h-[25px]  relative `}
                 priority
               />
               {

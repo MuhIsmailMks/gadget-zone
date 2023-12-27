@@ -46,11 +46,11 @@ nav ul li a.active::before{
 
 /* active menu nav */
 nav #noActiveMenu{
-    @apply mobile:opacity-0 mobile:duration-300 mobile:ease-in-out mobile:z-[-2];
+    @apply mobile:opacity-0 mobile:translate-x-[-100%] mobile:duration-300 mobile:ease-in-out mobile:z-[-2]; 
 }
 
 nav #activeMenu{
-    @apply duration-300 ease-in-out bg-white opacity-100 z-10;
+    @apply duration-300 mobile:translate-x-[0%] ease-in-out bg-white opacity-100 z-10;
 }
 
  

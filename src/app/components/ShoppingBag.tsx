@@ -22,7 +22,7 @@ export default function ShoppingBag( ) {
   };
 
    // handle store in bag
-   const bagItems = useSelector(state => state.shopping.products)
+   const bagItems = useSelector((state : RootState) => state.shopping.products)
    const quantityProducts = bagItems.reduce((total,item) => total + item.quantity,0)
    const priceAllProduct = bagItems.reduce((total,item) => total + (item.price * item.quantity),0);
    const offPriceAllProduct = bagItems.reduce((total,item) => total + (item.discountPrice? item.discountPrice : null ) * item.quantity  ,0);

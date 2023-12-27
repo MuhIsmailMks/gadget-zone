@@ -7,19 +7,19 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.css";
 
-import layout, { gradient, dimension, textStyle } from "./styles";
+import layout, { dimension, textStyle } from "./styles";
+
 
 // swiper slider
 
 // components
 import {
-  SwiperSlides,  
-  RatingProduct,
-  Cards,
+  SwiperSlides, 
   SpecialProductSmallContainer,
   SpecialProductMediumContainer,
   SpecialProductLargeContainer,
-  TitleSectionM
+  TitleSectionM,
+  Benefits
 } from "./components/Components";
    
 import Navigation from "./components/Navigation";
@@ -41,6 +41,8 @@ import { increment,decrement,incrementByAmount } from "./GlobalRedux/Features/co
 import ShoppingBag from "./components/ShoppingBag";
 import dataProducts from './data/products.json'
 import Product from "./components/Product"; 
+import { dataBenefits } from "./components/dataComponents";
+import { benefitStylingContainer, heroProductStyling, specialProductContainerStyling, specialProductStyling } from "./styles/homePageStyles";
  
 export default function Home() { 
  
@@ -64,9 +66,7 @@ export default function Home() {
 
   // counter
   const count = useSelector((state:RootState) => state.counter.value)
-  const dispatch = useDispatch()
-
-  const { width } = dimensions; 
+  const dispatch = useDispatch();
 
   return (   
  
@@ -78,24 +78,36 @@ export default function Home() {
         
         
           {/* hero products */}
-          <div className="hero-product  w-full h-[603px] relative xl-desktop:h-[900px]  max-s-desktop:h-[40vw] s_desktop-xl_tablet:h-[40vw] mobile:mt-[3rem] mobile:h-[40vw] phone:mt-0 phone:h-[75vw]">
+          <div className={`hero-product ${heroProductStyling.heroSize} ${heroProductStyling.properti}`}>
             <SwiperSlides />
           </div>
+
+          {/* benefits */}
+          <div className={`benefit-container relative   ${layout.flexCenter} ${dimension.Wfull_hAuto} ${benefitStylingContainer.properti} `}>
+            {
+              dataBenefits.map((benefit,i) => (
+                <Benefits {...benefit} />
+              ))
+            } 
+          </div>
+
 
             {/* special products */}
           <div  className={`special-products relative max-w-[100%]  ${dimension.Wfull_hAuto}`}
           >
 
           <div className={`title-special-product ${layout.flexStart} px-[2rem] phone-tablet:justify-center`}>
-            <TitleSectionM   text={'Special product'}  />
+            <TitleSectionM text={'Special product'}  />
           </div>
     
             {/* special products container*/}
-            <div   className={`special-products-container  ${dimension.Wfull_hAuto} ${dimension.specialProductContainer} ${layout.flexBetweenItemsStart}`}  >
+            <div   className={`special-products-container  ${dimension.Wfull_hAuto}  ${specialProductContainerStyling.specialProductContainer} ${layout.flexBetweenItemsStart}`}  >
+
               {/* col1 left*/}
               <div
                 className={`h-[auto] w-[932px] max-w-[70%] relative ${layout.flexDirection} gap-[1.45rem] s_desktop-xl_tablet:gap-[1.7vw] s-tablet:max-w-[90%] s-tablet:gap-[1vw]  phone:max-w-[100%] phone:gap-[.4rem] `}
-            >
+              >
+
               {/* top */}
               <div
                 className={`${layout.flexBetween} ${dimension.specialProductLeftContainer} `}
@@ -118,11 +130,12 @@ export default function Home() {
 
               {/* bottom */}
               <div
-                className={`${layout.flexBetween} flex-row-reverse ${dimension.specialProductLeftContainer}`}
+                className={`${layout.flexBetween} flex-row-reverse ${dimension.specialProductLeftContainer} `}
               >
                 <SpecialProductSmallContainer
                   imageProduct={specialProduct4}
                   brandProduct={"Sony"}
+                  altImage={"Sony Earbuds WF-1000XM5"}
                   nameProduct={"WF-1000XM5"}
                 />
 
@@ -150,7 +163,7 @@ export default function Home() {
             </div>
           </div>
 
-        </div>
+         </div>
 
           {/* our products */}
           <div className="our-products my-[3rem] mx-[auto]">
@@ -173,11 +186,7 @@ export default function Home() {
                 ))}   
             </div>
           </div>  
-
-          {/* percobaan untuk card */}
-          <div className="w-[300px] h-[200px] max-w-[100%] bg-black relative mt-[14rem] mx-[auto]">
-            <RatingProduct />
-          </div>
+ 
 
   
         

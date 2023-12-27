@@ -40,7 +40,6 @@ module.exports = {
         'phone-tablet': { 'max': '710px' },
       },
 
-
       // colors
       colors: {
         'primary-color': '#439CEF',
@@ -58,8 +57,6 @@ module.exports = {
         'smallBoxShadow2': ' 0px 4px 88px 72px rgba(255, 255, 255, 0.251)',
       },
 
-
-
       // font family
       fontFamily: {
         'plusJakartaSans': ['Plus Jakarta Sans', 'sans-serif'], 
@@ -70,7 +67,6 @@ module.exports = {
         'kufam': ['Kufam', 'sans-serif'],
       },
 
-
       // background image
       backgroundImage: {
         'bgImage': "url('/src/app/images/headerimage1.png')", 
@@ -78,8 +74,7 @@ module.exports = {
         
         'prevButtonHeader': "url('/src/app/icons/prevButton.svg')", 
         'nextButtonHeader': "url('/src/app/icons/nextButton.svg')", 
-      }
-
+      }, 
     },
   },
   plugins: [],

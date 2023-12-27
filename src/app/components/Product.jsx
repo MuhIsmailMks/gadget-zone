@@ -11,7 +11,7 @@ import { increaseQuantity,decreaseQuantity, addToBag,removeItems } from '../Glob
  
 
 
-export default function Product(item,id) {
+export default function Product(item) {
   const dispatch = useDispatch(); 
   const productState = useSelector(state => state.shopping.products)
   const removeProduct = () => {

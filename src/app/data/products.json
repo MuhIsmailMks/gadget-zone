@@ -1,13 +1,13 @@
 [
   {
       "id" : 1,
-      "nameProduct" : "Asus Rog",
-      "rating":5,
+      "nameProduct" : "Earbuds",
+      "rating":4.5,
       "favoriteCount":16,
-      "sales":43,
-      "price":1200,
-      "discountPrice":1500,
-      "imageUrl" : "/images/product1.jpg",
+      "sales":34,
+      "price":80.99,
+      "discountPrice":95,
+      "imageUrl" : "/images/product1.png",
       "newProduct" :true
   },
   {
@@ -46,7 +46,7 @@
       "favoriteCount":13,
       "sales":24,
       "price":80.99, 
-      "discount":14.01,
+      "discountPrice":14.01,
       "imageUrl" : "/images/product6.jpg"
   },
   {

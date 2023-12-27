@@ -2,16 +2,16 @@ import React,{useState,useEffect} from 'react'
 import Image from "next/image"; 
 
 // get data from dataComponents
-import {dataHeroSlidesHeader,dataProducts} from './dataComponents'
+import {dataBenefits, dataHeroSlidesHeader,dataProducts} from './dataComponents'
 import dataProductsJson from '../data/products.json'
 import layout,{ dimension, textStyle ,gradient, productCardStyles} from '../styles';
+import { benefitStyling } from '../styles/homePageStyles';
 
-// material UI
-// yang kita butuhkan di gadget zone
-import SvgIcon from "@mui/material/SvgIcon";  
-import { Favorite,FavoriteBorder } from '@mui/icons-material';
-import { pink,grey } from "@mui/material/colors"; 
-import { ThemeProvider } from 'styled-components'; 
+// material UI 
+// import SvgIcon from "@mui/material/SvgIcon";  
+// import { Favorite,FavoriteBorder } from '@mui/icons-material';
+// import { pink,grey } from "@mui/material/colors"; 
+// import { ThemeProvider } from 'styled-components'; 
 
 // images
 import star from '../icons/star.svg'
@@ -30,6 +30,8 @@ import "swiper/css/navigation";
 import 'swiper/css/pagination';
 
 import { Navigation,Pagination,EffectCreative,Autoplay } from "swiper/modules";
+
+// data 
 
 // components 
 function Components() {
@@ -51,6 +53,23 @@ export const MenuButton = ({click}) => {
     )
 }
 
+
+// benefits
+export const Benefits = (benefit) => {
+
+  return (
+    <div className={` relative ${layout.flexBetween} ${benefitStyling.sizeContainer} ${benefitStyling.properti} shadow-[0_3px_10.8px_0_rgba(0,0,0,0.25)]`}>
+      <Image
+      alt='sd'
+      src={benefit.icon}
+      height={10}
+      width={10}
+      className={`${benefitStyling.icon}`}
+      />
+      <p className={`${benefitStyling.text}`}>{benefit.text}</p>
+    </div> 
+  )
+}
 
 // hero product
 export const SwiperSlides = () => {
@@ -304,163 +323,12 @@ export const RatingProduct = ({ratingVal}) => {
 };
  
  
-// products card
-export const Cards = () => {
-  // resize
-  const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
 
-  const updateWindowSize = () => {
-    setWindowSize({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', updateWindowSize);
-
-    return () => {
-      window.removeEventListener('resize', updateWindowSize);
-    };
-  }, []);
-
-  console.log(windowSize.width);
-  
-  let favoriteSize = () => {
-    if(windowSize.width > 1300){
-      return 25
-    } else if(windowSize.width < 1300 && windowSize.width > 600){
-      return 20
-    } else {
-      return 15
-    }
-  }
- 
-
-  // favorite handler
-  const [countFavorite,setCountFavorite] = useState(dataProducts);
-
-  const handleFavoriteCard = (i) => {
-    const updateProducts = [...dataProducts];
-    updateProducts[i].favoriteState = !updateProducts[i].favoriteState
-
-    if(updateProducts[i].favoriteState){
-      updateProducts[i].favoriteCount += 1
-    } else {
-      updateProducts[i].favoriteCount -= 1
-    }
-
-    setCountFavorite(updateProducts)
-  }
-
-  return(
-  <>
-   {
-    dataProducts.map((product,i) => {
-      return(
-
-        <div className={`card-product transition-all duration-[500ms] cursor-pointer ease-in-out ${productCardStyles.cardSize} relative drop-shadow-card bg-white`}key={i}>
-
-          {/* image container product */}
-          <div className={`image-product ${layout.flexCenter} w-[full] ${productCardStyles.cardImageHeight} relative bg-[#ECECEC]`}>
-
-            {/* image product */}
-             <Image
-                src={product.imageProduct}  
-                className={`w-[50%] h-[auto]  duration-[500ms]`}
-                priority
-                alt="procut"
-              />  
- 
-               {/* handle card */}
-            <div className={`handle-card ${layout.flexDirection} absolute left-[.5rem] top-[1rem]  w-auto gap-[.4rem]`}>
-
-                  <div className={`add-bag ${layout.flexCenter} w-[30px]`}>
-                    <button className='bag-icon'>
-                      <Image 
-                      className={`${productCardStyles.cardBagIcon}`}
-                      src={bagIcon}
-                      alt='bag icon'
-                      />
-                    </button>
-                  </div>
-
-                  <div className={`favorite w-[30px] ${layout.flexDirection} items-center`}>
-                      <button onClick={() => handleFavoriteCard(i)}> 
-                      {
-                        product.favoriteState ? <Favorite sx={{ color: pink[500],fontSize:favoriteSize() }} className={`FavoriteIcon`}  /> : <FavoriteBorder sx={{ color: grey[600],fontSize:favoriteSize() }} className={`FavoriteIcon`} />
-                      }
-                      </button>
-                    <p className='font-saira text-[#8B8B8B] text-[0.938rem]'>{product.favoriteCount}</p> 
-                  </div>
-
-             </div>
-
-            {/* new product */}
-            { product.newProduct ? (
-                    <div className={`new-product absolute text-white top-[1rem] right-0 ${layout.flexCenter} ${productCardStyles.newProductSize} bg-primary-color`}>
-                    <p className={`font-maitre ${textStyle.newProductText} font-[400] h-[100%]`}>New</p>
-                  </div>
-              ):null} 
-
-          </div>
-
-          <div className={`about-product relative ${dimension.Wfull_hAuto} p-[.4rem]`}>
-            
-            {/* accessibilty product */}
-            <div className={`accessibilty-card ${layout.flexBetween} w-full relative`}>
-
-              {/* rating products */}
-              <div className={`rating-product ${layout.flexStart}  w-[auto]  gap-[.6rem] `}>
-                <RatingProduct ratingVal={product.ratingProduct}/> 
-                <p className={`${textStyle.accessibiltyCard}`}>({product.totalSales})</p>
-              </div>
-
-             
-            </div>
-
-
-
-            {/* name product */}
-            <div className={`product-name ${layout.flexCenter} w-full ${productCardStyles.cardNameHeight} `}>
-              <h5 className={`font-plusJakartaSans font-[500] ${textStyle.productName} `}>{product.nameProduct}</h5>
-            </div>
-
-            {/* price product */}
-            <div className={`price-product w-full relative ${layout.flexCenter} font-plusJakartaSans gap-[.5rem] phone:gap-[.2em]`}>
-
-              <div className={`price w-[auto] min-w-[50%]  ${product.offSell ? layout.flexEnd : layout.flexCenter }`}>
-                <p className={`font-[600] ${textStyle.productPrice}`}> ${product.PriceProduct} </p>
-              </div>
- 
-              { product.offSell ? (
-                  <div className="discount-price w-[50%]"> 
-                    <p className={`text-red-500 font-[400] line-through ${textStyle.offProductPrice}`}>${product.offSell}</p>
-                  </div>
-                ):null} 
-              
-            </div>
-
-          </div>
-
-      </div>
-
-
-      )
-    })
-   }
-  </>
-  )
-}
  
 
 export default {
     Components,
     SwiperSlides,
     MenuButton,  
-    RatingProduct,
-    Cards
+    RatingProduct, 
 }

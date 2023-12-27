@@ -57,8 +57,6 @@ export const dataHeroSlidesHeader = [
     },
 ];
 
- 
-
 export const dataProducts = [
     {
         imageProduct:earbudsV5, 
@@ -81,6 +79,39 @@ export const dataProducts = [
         PriceProduct:"189.89", 
     },
     
+];
+
+export const dataBenefits = [
+    {
+        icon:'/icons/order-icon.svg',
+        alt:'order icon',
+        text:'Fast Order',
+    },
+    {
+        icon:'/icons/credit-icon.svg',
+        alt:'credit icon',
+        text:'Credit card',
+    },
+    {
+        icon:'/icons/refund-icon.svg',
+        alt:'refund icon',
+        text:'Can refund',
+    },
+    {
+        icon:'/icons/save-money-icon.svg',
+        alt:'money icon',
+        text:'Save money',
+    },
+    {
+        icon:'/icons/easy-shop-icon.svg',
+        alt:'shop icon',
+        text:'easy shopping',
+    },
+    {
+        icon:'/icons/hours-icon.svg',
+        alt:'hours icon',
+        text:'24/7 hours',
+    },
 ]
 
 
