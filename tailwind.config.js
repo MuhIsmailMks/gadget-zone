@@ -30,8 +30,8 @@ module.exports = {
         
         // phone
         'phone': { 'max': '601px' },
-        'xl-phone': { 'min': '400px', 'max': '601px' },
-        'x-phone': { 'min': '1px', 'max': '399px' },  
+        'xl-phone': { 'min': '430px', 'max': '601px' },
+        'x-phone': { 'min': '1px', 'max': '429px' },  
   
         // Max width
         'max-s-desktop': { 'min': '1200px', 'max': '1400px' },

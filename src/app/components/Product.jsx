@@ -1,17 +1,39 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import Image from 'next/image'
 
 import { layout,productCardStyles,textStyle,dimension } from '../styles' 
 import { RatingProduct } from './Components'
-import formatCurrency from '../utilities/formatCurrency' 
-import { FavoriteBorder,Favorite } from '@mui/icons-material'
+import formatCurrency from '../utilities/formatCurrency'
 
+// material ui
+import { FavoriteBorder,Favorite } from '@mui/icons-material' 
+import { ThemeProvider, createTheme } from "@mui/material/styles";  
+import { pink,grey } from "@mui/material/colors"; 
+// redux
 import { useDispatch ,useSelector} from 'react-redux';
-import { increaseQuantity,decreaseQuantity, addToBag,removeItems } from '../GlobalRedux/Features/shoppingSlice'
+import {  addToBag,removeItems } from '../GlobalRedux/Features/shoppingSlice'
  
 
 
 export default function Product(item) {
+  const [dimensions, setDimensions] = React.useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  const handleResize = () => {
+    setDimensions({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("resize", handleResize, false);
+  }, []); 
+
+
+  // redux state
   const dispatch = useDispatch(); 
   const productState = useSelector(state => state.shopping.products)
   const removeProduct = () => {
@@ -23,6 +45,38 @@ export default function Product(item) {
   const hendleAddToBag = () => {
     dispatch(addToBag({...item}))
   }
+
+  // favorite handler
+  const [truerly,setTruerly] = useState(false)
+  const [favoriteAmout,setFavoriteAmout] = useState(item.favoriteCount)
+  createTheme({
+    palette: {
+      primary: {
+        main: pink[600],
+        main: grey[600],
+      },
+    },
+  });
+
+  function favoriteSize(){
+    if(dimensions.width >= 1100 ){
+      return '1.3rem'
+    } else if (dimensions.width >= 600 && dimensions.width <= 1100){
+      return '1.2rem'
+    } else {
+      return '1rem'
+    }
+  }
+
+  const handleFavoriteCard = () => {
+    setTruerly(!truerly);
+    if(truerly === true){
+      setFavoriteAmout(favoriteAmout - 1)
+    } else {
+      setFavoriteAmout(favoriteAmout + 1)
+    } 
+  }
+    
 
 
   return (
@@ -45,12 +99,12 @@ export default function Product(item) {
          {/* handle card */}
       <div className={`handle-card ${layout.flexDirection} absolute left-[.5rem] top-[1rem]  w-auto gap-[.4rem]`}> 
             <div className={`favorite w-[30px] ${layout.flexDirection} items-center`}>
-                {/* <button onClick={() =>  handleFavoriteCard(i)}> 
+                <button onClick={() =>  handleFavoriteCard()}>  
                 {
-                  product.favoriteState ? <Favorite sx={{ color: pink[500],fontSize:favoriteSize() }} className={`FavoriteIcon`}  /> : <FavoriteBorder sx={{ color: grey[600],fontSize:favoriteSize() }} className={`FavoriteIcon`} />
+                 truerly == true ? <Favorite sx={{ color: pink[500],fontSize:favoriteSize() }} className={`FavoriteIcon`}  /> : <FavoriteBorder sx={{ color: grey[600],fontSize:favoriteSize() }} className={`FavoriteIcon`} />
                 }
-                </button> */}
-              <p className='font-saira text-[#8B8B8B] text-[0.938rem]'>{item.favoriteCount}</p> 
+                </button>
+              <p className='font-saira text-[#8B8B8B] text-[0.938rem]'>{favoriteAmout}</p> 
             </div>
 
        </div>
@@ -120,7 +174,7 @@ export default function Product(item) {
             src='/bag-icon.svg'
             height={100}
             width={100}
-            className='h-[16px] w-[auto] mobile:h-[12px] '
+            className='h-[16px] w-[auto] s_desktop-xl_tablet:h-[14px] mobile:h-[12px] '
             alt='bag'
             />
       </button>

@@ -83,36 +83,62 @@ export const dataProducts = [
 
 export const dataBenefits = [
     {
-        icon:'/icons/order-icon.svg',
+        icon:'./icons/order-icon.svg',
         alt:'order icon',
         text:'Fast Order',
     },
     {
-        icon:'/icons/credit-icon.svg',
+        icon:'./icons/credit-icon.svg',
         alt:'credit icon',
         text:'Credit card',
     },
     {
-        icon:'/icons/refund-icon.svg',
+        icon:'./icons/refund-icon.svg',
         alt:'refund icon',
         text:'Can refund',
     },
     {
-        icon:'/icons/save-money-icon.svg',
+        icon:'./icons/save-money-icon.svg',
         alt:'money icon',
         text:'Save money',
     },
     {
-        icon:'/icons/easy-shop-icon.svg',
+        icon:'./icons/easy-shop-icon.svg',
         alt:'shop icon',
         text:'easy shopping',
     },
     {
-        icon:'/icons/hours-icon.svg',
+        icon:'./icons/hours-icon.svg',
         alt:'hours icon',
         text:'24/7 hours',
     },
 ]
 
+export const dataPopularProducts = [
+    {
+        image:"/images/smartphone-image.webp",
+        category:"SmartPhones",
+    },
+    {
+        image:"/images/gaming-gadget-image.webp",
+        category:"Gaming Gadget",
+    },
+    {
+        image:"/images/laptops-image.webp",
+        category:"Laptops",
+    },
+    {
+        image:"/images/computer-image.webp",
+        category:"Computer Equipment",
+    },
+    {
+        image:"/images/headphones-image.webp",
+        category:"Headphones",
+    },
+    {
+        image:"/images/tablet-image.webp",
+        category:"Tablets",
+    }, 
+]
 
  

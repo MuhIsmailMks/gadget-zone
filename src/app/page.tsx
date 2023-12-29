@@ -19,7 +19,8 @@ import {
   SpecialProductMediumContainer,
   SpecialProductLargeContainer,
   TitleSectionM,
-  Benefits
+  Benefits,
+  PopularProduct
 } from "./components/Components";
    
 import Navigation from "./components/Navigation";
@@ -41,8 +42,8 @@ import { increment,decrement,incrementByAmount } from "./GlobalRedux/Features/co
 import ShoppingBag from "./components/ShoppingBag";
 import dataProducts from './data/products.json'
 import Product from "./components/Product"; 
-import { dataBenefits } from "./components/dataComponents";
-import { benefitStylingContainer, heroProductStyling, specialProductContainerStyling, specialProductStyling } from "./styles/homePageStyles";
+import { dataBenefits, dataPopularProducts } from "./components/dataComponents";
+import { benefitStylingContainer, heroProductStyling, popularProductContainerStyling, popularProductStyling, specialProductContainerStyling, specialProductStyling } from "./styles/homePageStyles";
  
 export default function Home() { 
  
@@ -78,27 +79,25 @@ export default function Home() {
         
         
           {/* hero products */}
-          <div className={`hero-product ${heroProductStyling.heroSize} ${heroProductStyling.properti}`}>
+          <div className={`hero-product ${heroProductStyling.heroSize} ${heroProductStyling.property}`}>
             <SwiperSlides />
           </div>
 
           {/* benefits */}
-          <div className={`benefit-container relative   ${layout.flexCenter} ${dimension.Wfull_hAuto} ${benefitStylingContainer.properti} `}>
+          <div className={`benefit-container relative   ${layout.flexCenter} ${dimension.Wfull_hAuto} ${benefitStylingContainer.property} `}>
             {
               dataBenefits.map((benefit,i) => (
-                <Benefits {...benefit} />
+                <Benefits {...benefit} key={i}/>
               ))
             } 
           </div>
 
 
             {/* special products */}
-          <div  className={`special-products relative max-w-[100%]  ${dimension.Wfull_hAuto}`}
+          <div  className={`special-products relative max-w-[100%] overflow-hidden  ${dimension.Wfull_hAuto}`}
           >
-
-          <div className={`title-special-product ${layout.flexStart} px-[2rem] phone-tablet:justify-center`}>
-            <TitleSectionM text={'Special product'}  />
-          </div>
+ 
+            <TitleSectionM text={'Special product'}  /> 
     
             {/* special products container*/}
             <div   className={`special-products-container  ${dimension.Wfull_hAuto}  ${specialProductContainerStyling.specialProductContainer} ${layout.flexBetweenItemsStart}`}  >
@@ -110,7 +109,7 @@ export default function Home() {
 
               {/* top */}
               <div
-                className={`${layout.flexBetween} ${dimension.specialProductLeftContainer} `}
+                className={`${layout.flexBetween} ${specialProductContainerStyling.specialProductLeftContainer} `}
               >
                 <SpecialProductSmallContainer
                   imageProduct={specialProduct1}
@@ -130,7 +129,7 @@ export default function Home() {
 
               {/* bottom */}
               <div
-                className={`${layout.flexBetween} flex-row-reverse ${dimension.specialProductLeftContainer} `}
+                className={`${layout.flexBetween} flex-row-reverse ${specialProductContainerStyling.specialProductLeftContainer} `}
               >
                 <SpecialProductSmallContainer
                   imageProduct={specialProduct4}
@@ -151,7 +150,7 @@ export default function Home() {
 
             {/* col2 right*/}
             <div
-              className={`relative ${dimension.specialProductRightContainer}  bg-black `}
+              className={`relative ${specialProductContainerStyling.specialProductRightContainer}  bg-black `}
             >
               <SpecialProductLargeContainer
                 bgImageProduct={bgSpecialProduct5}
@@ -165,8 +164,31 @@ export default function Home() {
 
          </div>
 
+
+         {/* popular product */}
+         <div className={`popular-products-section relative ${dimension.Wfull_hAuto} max-w-[100%] overflow-hidden`}>
+
+          {/* title */} 
+            <TitleSectionM text={'Popular Product In This Shop'}  /> 
+
+          {/* popular product container */}
+          <div className={`popular-products-container relative ${layout.flexCenter} flex-wrap ${dimension.Wfull_hAuto} ${popularProductContainerStyling.property}`}>
+
+          {
+                dataPopularProducts.map((product,i) => (
+                  <PopularProduct {...product} key={i}/>
+                ))
+              } 
+  
+
+          </div>
+
+         </div>
+
+         
+
           {/* our products */}
-          <div className="our-products my-[3rem] mx-[auto]">
+          <div className="our-products  my-[3rem] mx-[auto]">
             <div
               className={`products-title ${layout.flexCenter} ${dimension.Wfull_hAuto} relative`}
             >
@@ -178,7 +200,7 @@ export default function Home() {
             </div>
 
             <div
-              className={`products-container mt-[4rem] mx-[auto] max-w-[1700px] ${layout.flexStart}   content-start  flex-wrap ${dimension.Wfull_hAuto} s-desktop:px-[2rem] tablet:px-[2.5rem] phone:px-[1.5rem] gap-[1.5rem]`}
+              className={`products-container mt-[4rem] mx-[auto] max-w-[1700px] ${layout.flexCenter}   content-start  flex-wrap ${dimension.Wfull_hAuto} s-desktop:px-[2rem] tablet:px-[2.5rem] phone:px-[1.5rem] gap-[1.5rem]`}
             >
               {/* <Cards /> */}
               {dataProducts.slice(0,5).map((item,id ) => ( 
@@ -189,8 +211,7 @@ export default function Home() {
  
 
   
-        
-        <Link href='/shoppingBag'>To bag</Link>
+         
  
         
 

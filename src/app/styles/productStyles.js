@@ -1,10 +1,15 @@
-export const productStyling = {
-    cardSize:'',
-    ratingStar:'',
+export const productContainer = {
+    dekstop:'',
+    tablet:'',
+    phone:''
+}
 
-    cardProperty:''
+export const productStyling = {
+    properti:""
 }
 
 export const productText = {
     price: "",
+    name: "",
+    sales: "",
 }

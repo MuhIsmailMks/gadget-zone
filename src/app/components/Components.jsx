@@ -5,7 +5,7 @@ import Image from "next/image";
 import {dataBenefits, dataHeroSlidesHeader,dataProducts} from './dataComponents'
 import dataProductsJson from '../data/products.json'
 import layout,{ dimension, textStyle ,gradient, productCardStyles} from '../styles';
-import { benefitStyling } from '../styles/homePageStyles';
+import { benefitStyling, specialProductContainerStyling, specialProductStyling,popularProductStyling } from '../styles/homePageStyles';
 
 // material UI 
 // import SvgIcon from "@mui/material/SvgIcon";  
@@ -51,24 +51,6 @@ export const MenuButton = ({click}) => {
             </svg> 
         </button>
     )
-}
-
-
-// benefits
-export const Benefits = (benefit) => {
-
-  return (
-    <div className={` relative ${layout.flexBetween} ${benefitStyling.sizeContainer} ${benefitStyling.properti} shadow-[0_3px_10.8px_0_rgba(0,0,0,0.25)]`}>
-      <Image
-      alt='sd'
-      src={benefit.icon}
-      height={10}
-      width={10}
-      className={`${benefitStyling.icon}`}
-      />
-      <p className={`${benefitStyling.text}`}>{benefit.text}</p>
-    </div> 
-  )
 }
 
 // hero product
@@ -170,25 +152,46 @@ export const SwiperSlides = () => {
 // title section
 export const TitleSectionM = ({text}) => {
   return(
-    <div className=' w-[auto] relative flex mt-[2rem]  '>
+    
+    <div className={`title-special-product ${layout.flexStart} mb-[2.25rem] px-[2rem] phone-tablet:justify-center`}>
+    <div className=' w-[auto] relative flex mt-[2rem]   '>
       <h2 className={`m-0 ${textStyle.mediumLatoText}`}>{text}</h2>
       <div className={`line ${dimension.sectionProductTitleLine}`}></div>
     </div>
+  </div>
+   
   )
 }
- 
 
-// special product container 
+// benefits
+export const Benefits = (benefit) => {
+
+  return (
+    <div className={` relative ${layout.flexBetween} ${benefitStyling.sizeContainer} ${benefitStyling.property} shadow-[0_3px_10.8px_0_rgba(0,0,0,0.25)]`}>
+      <Image
+      alt='sd'
+      src={benefit.icon}
+      height={10}
+      width={10}
+      className={`${benefitStyling.icon}`}
+      />
+      <p className={`${benefitStyling.text}`}>{benefit.text}</p>
+    </div> 
+  )
+}
+
+ 
+ 
 // special product
 export const SpecialProductSmallContainer = ({brandProduct,nameProduct,imageProduct,altImage}) => {
   return(
-    <div className={`small-box relative cursor-pointer ${dimension.specialProductSmall} ${dimension.specialProductPhoneSize}`}>
+    <div className={`small-box relative cursor-pointer  ${specialProductStyling.specialProductSmall} ${specialProductStyling.specialProductPhoneSize}`}>
 
         <div className="bg-image w-full h-full relative bg-black"></div> 
 
-          <Image src={imageProduct} alt={altImage} className={`object-contain select-none ${dimension.specialProductImageSmall}  `}/>
+          <Image src={imageProduct} alt={altImage} className={`object-contain select-none ${specialProductStyling.specialProductImageSmall} `}/>
 
-        <div className={`about-product ${dimension.specialProductTextContainer}`}>
+        <div className={`about-product   ${specialProductStyling.specialProductTextContainer}`}>
             <h3 className={`${textStyle.brandSpecialProduct}`}>{brandProduct}</h3>
             <p className={`${textStyle.nameSpecialProduct}`}>{nameProduct}</p>
         </div>
@@ -199,7 +202,7 @@ export const SpecialProductSmallContainer = ({brandProduct,nameProduct,imageProd
 
 export const SpecialProductMediumContainer = ({brandProduct,nameProduct,imageProduct,bgImageProduct,altImage}) => {
   return(
-    <div className={`medium-box ${dimension.specialProductMedium}  ${dimension.specialProductPhoneSize} ${layout.flexCenter}  `}>
+    <div className={`medium-box overflow-hidden cursor-pointer  ${specialProductStyling.specialProductMedium}  ${specialProductStyling.specialProductPhoneSize}  ${layout.flexCenter}  `}>
 
                 {/* bg image product */}
                   <Image
@@ -210,11 +213,11 @@ export const SpecialProductMediumContainer = ({brandProduct,nameProduct,imagePro
 
                 {/*  image product */}
                     <Image
-                    className={`image-product ${dimension.specialProductImageMedium}`}
+                    className={`image-product ${specialProductStyling.specialProductImageMedium}`}
                     src={imageProduct}
                    />
 
-                  <div className={`about-product ${dimension.specialProductTextContainer}`}>
+                  <div className={`about-product  ${specialProductStyling.specialProductTextContainer}`}>
                       <h3 className={`${textStyle.brandSpecialProduct}`}>{brandProduct}</h3>
                       <p className={`${textStyle.nameSpecialProduct}`}>{nameProduct}</p>
                   </div>
@@ -225,7 +228,7 @@ export const SpecialProductMediumContainer = ({brandProduct,nameProduct,imagePro
 
 export const SpecialProductLargeContainer = ({brandProduct,nameProduct,imageProduct,bgImageProduct,altImage}) => {
   return(
-    <div className={`large-box ${dimension.specialProductLarge} ${layout.flexCenterItemsStart} pt-[2rem] tablet:pt-[2%] phone:pt-[2%] cursor-pointer`}>
+    <div className={`large-box ${specialProductStyling.specialProductLarge} ${layout.flexCenterItemsStart} pt-[2rem] tablet:pt-[2%] phone:pt-[2%] cursor-pointer`}>
 
                 {/* bg image product */}
                   <Image
@@ -236,11 +239,13 @@ export const SpecialProductLargeContainer = ({brandProduct,nameProduct,imageProd
 
                 {/*  image product */}
                     <Image
-                    className={`image-product z-10 ${dimension.specialProductImageLarge}`}
+                    className={`image-product z-10  ${specialProductStyling.specialProductImageLarge}`}
                     src={imageProduct}
                    />
 
-                  <div className={`about-product ${dimension.specialProductTextContainer} text-center h-[28%] s_desktop-xl_tablet:h-[20%] s-tablet:h-[80px] phone:h-[70px]`}>
+                  <div className={`about-product 
+                  ${specialProductStyling.specialProductTextContainer}
+                  text-center h-[28%] s_desktop-xl_tablet:h-[20%] s-tablet:h-[80px] phone:h-[70px]`}>
                       <h3 className={`${textStyle.brandSpecialProduct}`}>{brandProduct}</h3>
                       <p className={`${textStyle.nameSpecialProduct}`}>{nameProduct}</p>
                   </div>
@@ -248,6 +253,25 @@ export const SpecialProductLargeContainer = ({brandProduct,nameProduct,imageProd
 
   )
 }
+
+// popular product
+export const PopularProduct = (product) => {
+  return (
+      <div className={`popular-product  ${popularProductStyling.property}  ${popularProductStyling.size}`}>
+      <Image
+      src={product.image}
+      alt={product.image}
+      height={20}
+      width={200}
+      className={popularProductStyling.imageSize}
+      />
+      <div className={`category ${dimension.Wfull_hAuto} h-[25%] ${layout.flexCenter}`}>
+        <h5 className={`${popularProductStyling.text}`}>{product.category}</h5>
+      </div>
+    </div>
+  )
+}
+
 
 // rating product
 const RatingStar = () => {

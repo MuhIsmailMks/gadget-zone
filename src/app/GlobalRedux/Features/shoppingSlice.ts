@@ -1,11 +1,12 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 import dataProducts from "../../data/products.json";
+ 
 
 const initialState = {
     products: [],
     quantity: 0,
-    total: 0
+    total: 0, 
 }
 
 const shoppingSlice = createSlice({

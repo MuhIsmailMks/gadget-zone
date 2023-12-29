@@ -2,6 +2,7 @@
   {
       "id" : 1,
       "nameProduct" : "Earbuds",
+      "favoriteState":false,
       "rating":4.5,
       "favoriteCount":16,
       "sales":34,
@@ -13,6 +14,7 @@
   {
       "id" : 2,
       "nameProduct" : "Bianchi Bike",
+      "favoriteState":false,
       "rating":5,
       "favoriteCount":13,
       "sales":13,
@@ -23,6 +25,7 @@
   {
       "id" : 3,
       "nameProduct" : "Hair Dryer",
+      "favoriteState":false,
       "rating":3,
       "favoriteCount":13,
       "sales":4,
@@ -33,6 +36,7 @@
   {
       "id" : 4,
       "nameProduct" : "Case Iphone 13",
+      "favoriteState":false,
       "rating":3,
       "favoriteCount":13,
       "sales":89,
@@ -42,6 +46,7 @@
   {
       "id" : 5,
       "nameProduct" : "Mouse Logitech",
+      "favoriteState":false,
       "rating":3,
       "favoriteCount":13,
       "sales":24,
@@ -52,6 +57,7 @@
   {
       "id" : 6,
       "nameProduct" : "Asus TUF Monitor",
+      "favoriteState":false,
       "rating":3,
       "favoriteCount":13,
       "sales":43,
@@ -61,6 +67,7 @@
   {
       "id" : 7,
       "nameProduct" : "Mousepad",
+      "favoriteState":false,
       "rating":3,
       "favoriteCount":13,
       "sales":21,

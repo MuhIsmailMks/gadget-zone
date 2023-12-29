@@ -18,7 +18,7 @@ export default function ShoppingBag( ) {
   const dispatch = useDispatch();
 
   const handleCloseClick = () => {
-    dispatch(closeBag());
+    dispatch(closeBag())
   };
 
    // handle store in bag
@@ -40,7 +40,7 @@ export default function ShoppingBag( ) {
           
           
           <h1 className='text-[2rem] font-mono text-center text-[black] font-semibold'>Bag</h1>
-          <button id='close-bag' className='right-[2rem] absolute top-[2rem] w-[30px] h-[30px] cursor-pointer bg-blue-600'  onClick={() => handleCloseClick()}>
+          <button id='close-bag' className='right-[2rem] absolute top-[2rem] w-[30px] h-[30px] cursor-pointer  '  onClick={() => handleCloseClick()}>
             <img src="/icons/close-bag-btn.svg" alt="" />
           </button>
 

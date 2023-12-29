@@ -9,8 +9,7 @@ import  '../page.css';
 import { useSelector,useDispatch } from 'react-redux';
  
 import { MenuButton } from './Components';  
-// image
-import logo from '../icons/logo.svg' 
+// image 
 import { openBag } from '../GlobalRedux/Features/bagActions';
 import { RootState } from '../GlobalRedux/store';
 
@@ -20,8 +19,7 @@ export default function Navigation() {
   const dispatch = useDispatch();
   // handle bag
   const handleBagClick  = () => {   
-    dispatch(openBag());
-    console.log(openBag()); 
+    dispatch(openBag()); 
   }
 
 
@@ -81,18 +79,21 @@ export default function Navigation() {
               { icon: '/icons/account-icon.svg', alt: "account Icon" },
               { icon: '/icons/bag-nav-icon.svg' , alt: "bag icon",handler:true,quantity:true ,class:'bag'},
             ].map((image, i) => (
-              <span className={`navigation-handler cursor-pointer relative ${image.class? image.class : ''}`} onClick={handleBagClick }>
+              <span className={`navigation-handler cursor-pointer relative ${image.class? image.class : ''}`} key={i}  onClick={handleBagClick }>
                  <Image
                 src={image.icon} 
                 key={i} 
                 alt={image.alt} 
                 width={20}
                 height={20}
-                className={`h-[37px] w-full object-contain tablet:h-[39px] s-tablet:h-[33px]  phone:h-[35px] x-phone:h-[25px]  relative `}
+                className={`h-[37px] w-full object-contain tablet:h-[39px] s-tablet:h-[33px]  phone:h-[30px] x-phone:h-[25px]  relative `}
                 priority
               />
               {
-                image.class? <div className={`countBag absolute ${layout.flexCenter}  h-[20px] w-[20px] bg-red-500 bottom-0 left-0 absolute rounded-[50%] z-[1] text-white font-plusJakartaSans text-[.75rem] phone:h-[17px] phone:w-[17px] phone:text-[.65rem] x-phone:h-[15px] x-phone:w-[15px]`}>{quantity}</div> : null
+                image.class? <div className={`countBag absolute ${layout.flexCenter}  h-[20px] w-[20px] bg-red-500 bottom-0 left-0 absolute rounded-[50%] z-[1] text-white font-plusJakartaSans text-[.75rem] phone:h-[17px] phone:w-[17px] phone:text-[.65rem] x-phone:h-[15px] x-phone:w-[15px]`}>{
+                      quantity > 99 ? '99+' : quantity
+                  }
+                </div> : null
               }
               </span>
              
