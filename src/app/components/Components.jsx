@@ -175,7 +175,7 @@ export const Benefits = (benefit) => {
       width={10}
       className={`${benefitStyling.icon}`}
       />
-      <p className={`${benefitStyling.text}`}>{benefit.text}</p>
+      <p className={`${layout.flexCenter} ${benefitStyling.text}`}>{benefit.text}</p>
     </div> 
   )
 }
@@ -265,7 +265,7 @@ export const PopularProduct = (product) => {
       width={200}
       className={popularProductStyling.imageSize}
       />
-      <div className={`category ${dimension.Wfull_hAuto} h-[25%] ${layout.flexCenter}`}>
+      <div className={`category w-full h-[25%] ${layout.flexCenter}`}>
         <h5 className={`${popularProductStyling.text}`}>{product.category}</h5>
       </div>
     </div>

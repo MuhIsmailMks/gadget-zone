@@ -92,7 +92,7 @@ export default function Product(item) {
           height={100}
           className={`w-[50%] h-[auto]  duration-[500ms]`}
           priority
-          alt="procut"
+          alt={item.imageUrl}
         />  
  
 

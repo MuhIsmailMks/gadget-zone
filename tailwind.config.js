@@ -22,6 +22,7 @@ module.exports = {
         //  breakpoints device
         's_desktop-xl_tablet': {'max': '1400px', 'min': '800px'},   
         'mobile': { 'max': '1100px' },
+        'phone-mtablet': { 'max': '800px' },
 
         // tablet
         'tablet' : { 'min': '600px', 'max': '1200px' },
@@ -55,6 +56,7 @@ module.exports = {
         'smallBoxShadow1': ' 0px 4px 108px 6vw rgba(255, 255, 255, 0.351)',
         'smallBoxShadowPhone1': ' 0px 4px 80px 37px rgba(255, 255, 255, 0.351)',
         'smallBoxShadow2': ' 0px 4px 88px 72px rgba(255, 255, 255, 0.251)',
+        'shopBagComponentsShadow': '  0px 4px 6.2px -1px rgba(0, 0, 0, 0.26)',
       },
 
       // font family

@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
-import useShoppingBag,{ShoppingBagProvider} from '../context/ShoppingBagContext'
-import BagItem from './BagItem'
-import dataProducts from '../data/products.json'
+import BagItem from './BagItem' 
 
 import { useSelector,useDispatch } from 'react-redux';
 import { closeBag } from '../GlobalRedux/Features/bagActions'; 
 import { RootState } from '../GlobalRedux/store'
 import formatCurrency from '../utilities/formatCurrency'
-import { layout, shoppingBagStyles } from '../styles'
+import { layout } from '../styles'
+import { shoppingBagContainer } from '../styles/bagContainerStyles'
 
 export default function ShoppingBag( ) { 
   // handle close bag   
@@ -33,23 +32,31 @@ export default function ShoppingBag( ) {
   }, 0);
    
   
-  return (  
-         <div>
-       <div> 
-        <div className={`bag-container ${shoppingBagStyles.bagContainerSize} fixed ${shoppingBagStyles.bag}  translate-y-[110%] duration-[.2s]  z-[999] ${isOpen  ? 'active' : ''}`}> 
+  return (   
+       <> 
+        <div className={`bag-container fixed ${shoppingBagContainer.size}  ${shoppingBagContainer.property} ${isOpen  ? 'active' : ''}`}> 
           
           
-          <h1 className='text-[2rem] font-mono text-center text-[black] font-semibold'>Bag</h1>
-          <button id='close-bag' className='right-[2rem] absolute top-[2rem] w-[30px] h-[30px] cursor-pointer  '  onClick={() => handleCloseClick()}>
-            <img src="/icons/close-bag-btn.svg" alt="" />
+          {/* heading section */}
+          <h1 className={`${shoppingBagContainer.textHeading}`}>Bag</h1>
+          <button id='close-bag' className={`${shoppingBagContainer.closeButton}`}  onClick={() => handleCloseClick()}>
+            <Image
+              src={'/icons/close-bag-btn.svg'}
+              height={10}
+              width={10}
+              alt='closeButton'
+              className='object-cover h-full w-full'
+            />
           </button>
 
-          <div className="about-bag-product w-full relative flex justify-center gap-[1rem]">
+          {/* content & item section */}
+          <div className={`about-bag-product h-[80%] w-full ${shoppingBagContainer.aboutbagProduct.property} `}>
 
-            <div className="products-list  flex flex-col gap-[.5rem] w-[691px]">
-              <div className="about-product mx-auto w-[100%] h-[50px] bg-white flex justify-end text-black items-center px-[.5rem] gap-[.3rem] shadow-[0px_13px_17.700000762939453px_-10px_rgba(0,0,0,0.25)] ">
+            <div className={`products-list ${shoppingBagContainer.productList.property}  ${shoppingBagContainer.productList.size} `}>
+
+              <div className={`about-product w-[100%] h-[50px] ${shoppingBagContainer.productList.aboutProductProperty}`}>
               
-              <div className='bag-product-list flex items-center justify-between w-full relative'>
+              <div className={`bag-product-list ${shoppingBagContainer.aboutbagProduct.bagProductList}`}>
                   <h2>Product List</h2>
                   <div className='flex items-center '>
                   <p>Price</p>
@@ -60,8 +67,9 @@ export default function ShoppingBag( ) {
               </div>
               </div>
 
-              <div className="product-list-container h-[350px] w-full relative overflow-y-auto flex flex-col gap-[.3rem]">  
-                    {
+              <div className="product-list-container h-[350px] w-full relative overflow-y-auto flex flex-col gap-[.7rem]">  
+              
+                 {
                     products.map((item,i) => (
                       <BagItem key={i} {...item}/>
                     ))
@@ -71,8 +79,9 @@ export default function ShoppingBag( ) {
 
             </div>
 
-            <div className="price-product-container   relative  w-[40%]">
-              <div className={`price-container relative  ${layout.flexDirection} w-[470px] h-[auto]  z-[999] shadow-[0px_4px_22.399999618530273px_1px_#00000040] rounded-[15px] gap-[.7rem] px-[1.75rem] py-[1rem] text-[1.25rem]   text-black`}>
+            <div className="price-product-container   relative phone-mtablet:absolute phone-mtablet:left-0 phone-mtablet:bottom-0 w-[40%]">
+              <div className={`price-container relative  ${layout.flexDirection} ${shoppingBagContainer.priceContainer.size} ${shoppingBagContainer.priceContainer.property} ${shoppingBagContainer.priceContainer.text} `}>
+
                 <h3>Total</h3>
 
                 <div className="line my-[.3rem] w-full h-[1px] bg-[#D7D7D7]"></div>
@@ -138,48 +147,16 @@ export default function ShoppingBag( ) {
                  {/* subtotal */}
                 <div className="subTotal container-in-total">
                   <p>Subtotal</p>
+                  <span>
                      {
                         formatCurrency(priceAllProduct)
                      }
+                  </span>
                 </div>
 
-                <button className='bg-[#439CEF] text-[white] w-[180px] h-[40px] rounded-[5px] mx-auto'>Checkout</button>
+                <button className={`${shoppingBagContainer.priceContainer.checkButton}`}>Checkout</button>
 
               </div>
-
-
-
-
-
-
-
-             <div className='bg-[red] opacity-0'>
-             <div className='total-price flex items-center'>
-                <h1 className='text-black font-semibold'>Total :</h1>
-                <h2 className='text-black'> 
-                {
-                  formatCurrency(totalBeforeDiscountPrice)
-                }
-                </h2>
-              </div>
-              <div className='total-discound flex items-center'>
-                <h1 className='text-black font-semibold'> Discount :</h1>
-                <h2 className='text-black'>  - 
-                {
-                  formatCurrency(offPriceAllProduct)
-                }
-                </h2>
-              </div>
-              <div className='total-price-after-discount flex items-center'>
-                <h1 className='text-black font-semibold'>Total Price :</h1>
-                <h2 className='text-black'>  
-                {
-                  formatCurrency(priceAllProduct)
-                }
-                </h2>
-              </div>
-             </div>
-
 
 
         
@@ -188,8 +165,8 @@ export default function ShoppingBag( ) {
           </div>
 
         </div>  
-      </div>
-    </div> 
+         
+    </> 
  
   )
 }

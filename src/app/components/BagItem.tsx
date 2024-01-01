@@ -7,6 +7,7 @@ import { layout } from '../styles';
 import { useDispatch,useSelector } from 'react-redux';
 import {increaseQuantity,decreaseQuantity, removeItems } from '../GlobalRedux/Features/shoppingSlice';
 import { RootState } from '../GlobalRedux/store';
+import { bagItem } from '../styles/bagContainerStyles';
  
 
 export default function BagItem(item) { 
@@ -30,14 +31,17 @@ export default function BagItem(item) {
   }) 
 
   return ( 
-          <div className="shopping-bag mx-auto w-[100%] h-[110px] min-h-[100px] relative bg-[white] shadow-[10px_13px_17.700000762939453px_-10px_rgba(0,0,0,0.25)] flex items-center justify-between px-[.5rem]" key={item.id} > 
-            <section className='h-[100%] w-[auto] relative flex'>
+          <div className={`bag-item mx-auto ${bagItem.size}  ${bagItem.property} `} key={item.id} > 
+
+            {/* image & name product in bag */}
+            <section className={`${bagItem.component.image_name_product}`}>
               <div className="image-product h-[100%] w-[140px] flex items-center justify-center ">
                 <img src={`${item.imageUrl}`} alt="" className='h-[90px] w-[90px] object-contain my-auto' />
               </div> 
-              <p className='w-[100px] py-[.8rem] text-[black] font-medium text-[1.1rem]'>{item.nameProduct}</p>
+              <p className='w-[150px] py-[.8rem] text-[black] font-medium text-[1.1rem]'>{item.nameProduct}</p>
             </section>
 
+            {/* about product in bag */}
             <div className='h-[100%] flex items-center  text-[.938rem]'>
 
                

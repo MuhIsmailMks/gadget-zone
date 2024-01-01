@@ -56,8 +56,8 @@ export const popularProductContainerStyling = {
 }
 
 export const popularProductStyling = {
-    size:'w-[160px] h-[188px] tablet:h-[160px] tablet:w-[140px] phone:h-[130px] phone:w-[107px]',
-    imageSize:"w-[full] object-cover h-[140px] mobile:h-[110px] phone:h-[70%]",
+    size:'w-[160px] h-[188px] mobile:h-[160px] mobile:w-[140px] phone:h-[130px] phone:w-[107px]',
+    imageSize:"w-[full] object-cover h-[140px] mobile:h-[120px] phone:h-[70%]",
     property:"bg-primary-color rounded-[10px] overflow-hidden",
-    text:'font-plusJakartaSans text-white text-[0.813rem] text-center font-[500] tablet:text-[.7rem] phone:text-[.6rem]'
+    text:'font-plusJakartaSans   text-white text-[0.813rem] text-center font-[500] mobile:text-[.7rem] phone:text-[.6rem]'
 }

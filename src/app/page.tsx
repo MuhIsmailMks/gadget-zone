@@ -79,12 +79,12 @@ export default function Home() {
         
         
           {/* hero products */}
-          <div className={`hero-product ${heroProductStyling.heroSize} ${heroProductStyling.property}`}>
+          <div className={`hero-product hidden ${heroProductStyling.heroSize} ${heroProductStyling.property}`}>
             <SwiperSlides />
           </div>
 
           {/* benefits */}
-          <div className={`benefit-container relative   ${layout.flexCenter} ${dimension.Wfull_hAuto} ${benefitStylingContainer.property} `}>
+          <div className={`benefit-container hidden relative   ${layout.flexCenter} ${dimension.Wfull_hAuto} ${benefitStylingContainer.property} `}>
             {
               dataBenefits.map((benefit,i) => (
                 <Benefits {...benefit} key={i}/>
@@ -94,7 +94,7 @@ export default function Home() {
 
 
             {/* special products */}
-          <div  className={`special-products relative max-w-[100%] overflow-hidden  ${dimension.Wfull_hAuto}`}
+          <div  className={`special-products hidden relative max-w-[100%] overflow-hidden  ${dimension.Wfull_hAuto}`}
           >
  
             <TitleSectionM text={'Special product'}  /> 
@@ -166,7 +166,7 @@ export default function Home() {
 
 
          {/* popular product */}
-         <div className={`popular-products-section relative ${dimension.Wfull_hAuto} max-w-[100%] overflow-hidden`}>
+         <div className={`popular-products-section hidden relative ${dimension.Wfull_hAuto} max-w-[100%] overflow-hidden`}>
 
           {/* title */} 
             <TitleSectionM text={'Popular Product In This Shop'}  /> 
@@ -203,7 +203,7 @@ export default function Home() {
               className={`products-container mt-[4rem] mx-[auto] max-w-[1700px] ${layout.flexCenter}   content-start  flex-wrap ${dimension.Wfull_hAuto} s-desktop:px-[2rem] tablet:px-[2.5rem] phone:px-[1.5rem] gap-[1.5rem]`}
             >
               {/* <Cards /> */}
-              {dataProducts.slice(0,5).map((item,id ) => ( 
+              {dataProducts.slice(0,10).map((item,id ) => ( 
                         <Product {...item}  key={id}/>  
                 ))}   
             </div>
