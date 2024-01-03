@@ -67,7 +67,7 @@ export default function ShoppingBag( ) {
               </div>
               </div>
 
-              <div className="product-list-container h-[350px] w-full relative overflow-y-auto flex flex-col gap-[.7rem]">  
+              <div className={`product-list-container ${shoppingBagContainer.productListContainer.size}  ${shoppingBagContainer.productListContainer.property} `}>  
               
                  {
                     products.map((item,i) => (
@@ -79,7 +79,8 @@ export default function ShoppingBag( ) {
 
             </div>
 
-            <div className="price-product-container   relative phone-mtablet:absolute phone-mtablet:left-0 phone-mtablet:bottom-0 w-[40%]">
+            <div className={`price-product-container     ${shoppingBagContainer.priceContainer.containerPriceProduct} `}>
+
               <div className={`price-container relative  ${layout.flexDirection} ${shoppingBagContainer.priceContainer.size} ${shoppingBagContainer.priceContainer.property} ${shoppingBagContainer.priceContainer.text} `}>
 
                 <h3>Total</h3>

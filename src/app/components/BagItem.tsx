@@ -36,19 +36,40 @@ export default function BagItem(item) {
             {/* image & name product in bag */}
             <section className={`${bagItem.component.image_name_product}`}>
               <div className="image-product h-[100%] w-[140px] flex items-center justify-center ">
-                <img src={`${item.imageUrl}`} alt="" className='h-[90px] w-[90px] object-contain my-auto' />
+                <img src={`${item.imageUrl}`} alt="" className={`object-contain my-auto ${bagItem.component.imageSize}`} />
               </div> 
               <p className='w-[150px] py-[.8rem] text-[black] font-medium text-[1.1rem]'>{item.nameProduct}</p>
             </section>
 
             {/* about product in bag */}
-            <div className='h-[100%] flex items-center  text-[.938rem]'>
+            <div className='about-product-bag h-[100%] flex items-center  text-[.938rem]'>
 
                
-              <p className='w-[90px] text-black text-center font-sans font-[500] '>{formatCurrency(item.price)}</p>
+               <div id='price-product'>
+
+                  {
+                    bagItems.map(items => {
+                      if(items.id === item.id){ 
+                        if(item.discountPrice)
+                         return (
+                          <p className=' line-through text-left text-[.8rem] text-[red] absolute mb-[1.6rem]'>
+                            {
+                              formatCurrency(items.discountPrice)
+                            }
+                         </p>
+                          )
+                      } else {
+                        return null
+                      }
+                    })
+                  } 
+
+                  <p className='w-[90px] text-black text-center font-sans font-[500] '>{formatCurrency(item.price)}</p>
+               </div>
+             
 
               {/* quantity */}
-              <div className={`${layout.flexCenter} w-[90px] gap-[.5rem]  `}>
+              <div className={`justify-center w-[90px] gap-[.5rem]  `}>
                 <button className='border-none outline-none' onClick={() => lessQuantity(item.id)}>
                    <Image
                    alt='decreaseQuantity'
@@ -75,20 +96,9 @@ export default function BagItem(item) {
               </div>
               
 
-              <div id='price' className='w-[90px] relative  '>
-                 <p className=' line-through text-left text-[.8rem] text-[red]'>
-                  {
-                    bagItems.map(items => {
-                      if(items.id === item.id){ 
-                        if(item.discountPrice)
-                         return formatCurrency(items.discountPrice * items.quantity)
-                      } else {
-                        return null
-                      }
-                    })
-                  } 
-                  </p>
-                  <p id='total-price' className=' w-[90px] text-black  font-sans font-[500] '>  
+              <div id='total-price' className='w-[90px] relative '> 
+
+                  <p className=' text-black  font-sans font-[500] '>  
                     {
                       bagItems.map(items => {
                         if(items.id === item.id){ 
@@ -97,6 +107,7 @@ export default function BagItem(item) {
                       })
                     }
                     </p>
+
               </div> 
 
               <div className="remove-item  relative w-[90px]  h-[100%] flex justify-center items-center"  >

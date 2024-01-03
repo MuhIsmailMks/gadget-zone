@@ -160,11 +160,11 @@ div.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal > s
   
 /* bag */
 .bag-container.active{
-    @apply bg-[#F5F5F5] duration-[.4s] ease-in-out translate-y-[10%] border-l rounded-[30px] ;
+    @apply bg-[#F5F5F5] duration-[.4s] ease-in-out translate-y-[10%] border-l rounded-[30px] tablet:translate-y-[0%] phone:translate-y-[0%];
 }
  
 .bag-product-list p{
-    @apply w-[90px] max-w-[100%] text-center font-sans font-[500]  xl-tablet:w-[120px] phone-mtablet:w-[20%];
+    @apply w-[90px] max-w-[100%] text-center font-sans font-[500]  xl-tablet:w-[150px] phone-mtablet:w-[20%]  ;
 }
 
 .container-in-total{
@@ -173,4 +173,8 @@ div.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal > s
 
 .price-product-container div  span{
     @apply font-[700]  !important;
+}
+ 
+.about-product-bag div{
+    @apply   h-full flex items-center  justify-center  mobile:w-[150px]  mobile:text-center;
 }
