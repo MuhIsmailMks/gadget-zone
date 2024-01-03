@@ -9,7 +9,33 @@ import formatCurrency from '../utilities/formatCurrency'
 import { layout } from '../styles'
 import { shoppingBagContainer } from '../styles/bagContainerStyles'
 
+interface Dimensions{
+  width: number
+  height: number 
+}
+
+interface DropdownCheckout{
+  drop: boolean 
+}
+
 export default function ShoppingBag( ) { 
+  // width 
+  const [dimensions, setDimensions] = React.useState<Dimensions>({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  const handleResize = () => {
+    setDimensions({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("resize", handleResize, false);
+  }, []);
+  
   // handle close bag   
   const isOpen = useSelector((state: RootState) => state.bag.isOpen);
   const {products,quantity,total} = useSelector((store:RootState) => store.shopping)
@@ -30,6 +56,12 @@ export default function ShoppingBag( ) {
     
     return total + (item.price + (item.discountPrice ? item.discountPrice : null) ) * item.quantity
   }, 0);
+
+  // down checkout
+  const [drop,setDrop] = useState(false);
+  const dropdownCheck = () => {
+    setDrop(!drop)
+  }
    
   
   return (   
@@ -79,11 +111,30 @@ export default function ShoppingBag( ) {
 
             </div>
 
-            <div className={`price-product-container     ${shoppingBagContainer.priceContainer.containerPriceProduct} `}>
+            <div className={`price-product-container duration-[400ms]     ${shoppingBagContainer.priceContainer.containerPriceProduct} ${drop === true ? 'drop' : ''}`}>
 
               <div className={`price-container relative  ${layout.flexDirection} ${shoppingBagContainer.priceContainer.size} ${shoppingBagContainer.priceContainer.property} ${shoppingBagContainer.priceContainer.text} `}>
 
-                <h3>Total</h3>
+                <div className={`${layout.flexBetween} w-full`}>
+                  
+                   <h3>Total</h3>
+            
+                   {
+                    dimensions.width >= 1100 ? null :   <div className={`drop-checkout-btn abso duration-[500ms] ${drop === true ? 'rotate-180' :''}`} onClick={() => dropdownCheck()}>
+                      <Image
+                        src='icons/dropdown-checkout.svg'
+                        alt='checkout btn'
+                        height={20}
+                        width={20}
+                        className='h-auto w-[30px]'
+                    />
+                  </div> 
+                   }
+     
+
+                </div>
+
+              
 
                 <div className="line my-[.3rem] w-full h-[1px] bg-[#D7D7D7]"></div>
 
