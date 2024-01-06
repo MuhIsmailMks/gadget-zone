@@ -86,17 +86,18 @@ export default function ShoppingBag( ) {
 
             <div className={`products-list ${shoppingBagContainer.productList.property}  ${shoppingBagContainer.productList.size} `}>
 
-              <div className={`about-product w-[100%] h-[50px] ${shoppingBagContainer.productList.aboutProductProperty}`}>
+              <div className={`about-product w-[100%] h-[50px] phone:h-[40px] ${shoppingBagContainer.productList.aboutProductProperty}`}>
               
-              <div className={`bag-product-list ${shoppingBagContainer.aboutbagProduct.bagProductList}`}>
-                  <h2>Product List</h2>
-                  <div className='flex items-center '>
-                  <p>Price</p>
-                  <p>Quantity</p>
-                  <p>Total</p>
-                  <p>Remove</p>
-                  </div>
-              </div>
+                <div className={`bag-product-list ${shoppingBagContainer.aboutbagProduct.bagProductList}  ${shoppingBagContainer.aboutbagProduct.text}  `}>
+                    <h2 className='font-[700]'>Product List</h2>
+                    <div className={`flex items-center `}>
+                      <p>Price</p>
+                      <p className='quantity'>Quantity</p>
+                      <p>Total</p>
+                      <p>Remove</p>
+                    </div> 
+                </div>
+
               </div>
 
               <div className={`product-list-container ${shoppingBagContainer.productListContainer.size}  ${shoppingBagContainer.productListContainer.property} `}>  
@@ -111,7 +112,7 @@ export default function ShoppingBag( ) {
 
             </div>
 
-            <div className={`price-product-container duration-[400ms]     ${shoppingBagContainer.priceContainer.containerPriceProduct} ${drop === true ? 'drop' : ''}`}>
+            <div className={`price-product-container duration-[400ms] ${shoppingBagContainer.priceContainer.containerPriceProduct} ${drop === true ? 'drop' : ''}`}>
 
               <div className={`price-container relative  ${layout.flexDirection} ${shoppingBagContainer.priceContainer.size} ${shoppingBagContainer.priceContainer.property} ${shoppingBagContainer.priceContainer.text} `}>
 

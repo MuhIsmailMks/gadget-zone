@@ -164,7 +164,11 @@ div.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal > s
 }
  
 .bag-product-list p{
-    @apply w-[90px] max-w-[100%] text-center font-sans font-[500]  xl-tablet:w-[150px] phone-mtablet:w-[100px]  phone:w-[60px] bg-red-500;
+    @apply w-[90px] max-w-[100%] text-center  xl-tablet:w-[150px] phone-mtablet:w-[100px] phone:w-[80px];
+}
+
+.bag-product-list .quantity{
+    @apply phone:w-[100px];
 }
 
 .container-in-total{
