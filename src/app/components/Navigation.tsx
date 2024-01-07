@@ -79,7 +79,8 @@ export default function Navigation() {
               { icon: '/icons/account-icon.svg', alt: "account Icon" },
               { icon: '/icons/bag-nav-icon.svg' , alt: "bag icon",handler:true,quantity:true ,class:'bag'},
             ].map((image, i) => (
-              <span className={`navigation-handler cursor-pointer relative ${image.class? image.class : ''}`} key={i}  onClick={handleBagClick }>
+              <span className={`navigation-handler cursor-pointer relative ${image.class? image.class : ''}`} key={i}  
+              onClick={image.handler === true ?  handleBagClick : null } >
                  <Image
                 src={image.icon} 
                 key={i} 

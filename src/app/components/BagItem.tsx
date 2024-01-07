@@ -70,7 +70,7 @@ export default function BagItem(item) {
 
               {/* quantity */}
               <div className={`justify-center w-[90px] gap-[.5rem]  `}>
-                <button className='border-none outline-none' onClick={() => lessQuantity(item.id)}>
+                <button className='border-none outline-none select-none' onClick={() => lessQuantity(item.id)}>
                    <Image
                    alt='decreaseQuantity'
                    height={20}
@@ -84,7 +84,7 @@ export default function BagItem(item) {
                   quantityProduct
                 }  
                 </p> 
-                <button className='border-none outline-none' onClick={() => addQuantity(item.id)}>
+                <button className='border-none outline-none select-none' onClick={() => addQuantity(item.id)}>
                   <Image
                   alt='increaseQuantity'
                    height={20}

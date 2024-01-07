@@ -39,6 +39,9 @@ module.exports = {
         'max-xl-tablet': { 'min': '800px', 'max': '1200px' },
         'max-LTablet': { 'min': '600px',  'max': '800px' },
         'phone-tablet': { 'max': '710px' },
+
+        // height breakpoints
+        'x-height-phone': { 'min': '500px', 'height': '800px' },
       },
 
       // colors

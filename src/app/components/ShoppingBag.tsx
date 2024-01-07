@@ -82,7 +82,7 @@ export default function ShoppingBag( ) {
           </button>
 
           {/* content & item section */}
-          <div className={`about-bag-product h-[80%] w-full ${shoppingBagContainer.aboutbagProduct.property} `}>
+          <div className={`about-bag-product font-plusJakartaSans h-[80%] w-full ${shoppingBagContainer.aboutbagProduct.property} `}>
 
             <div className={`products-list ${shoppingBagContainer.productList.property}  ${shoppingBagContainer.productList.size} `}>
 
@@ -127,7 +127,7 @@ export default function ShoppingBag( ) {
                         alt='checkout btn'
                         height={20}
                         width={20}
-                        className='h-auto w-[30px]'
+                        className='h-auto w-[30px] s-tablet:w-[25px] phone:w-[20px]'
                     />
                   </div> 
                    }
@@ -157,7 +157,7 @@ export default function ShoppingBag( ) {
                 alt={image.alt} 
                 width={20}
                 height={20}
-                className="h-[21px] w-auto object-contain "
+                className={`w-auto object-contain ${shoppingBagContainer.priceContainer.iconPay}`}
                 priority
               /> 
              

@@ -164,7 +164,7 @@ div.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal > s
 }
  
 .bag-product-list p{
-    @apply w-[90px] max-w-[100%] text-center  xl-tablet:w-[150px] phone-mtablet:w-[100px] phone:w-[80px];
+    @apply w-[90px] max-w-[100%] text-center  xl-tablet:w-[150px] phone-mtablet:w-[100px] phone:w-[70px];
 }
 
 .bag-product-list .quantity{
