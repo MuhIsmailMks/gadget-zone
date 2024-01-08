@@ -8,8 +8,8 @@ export const layout = {
     flexDirection: 'flex flex-col items-start',
 }
 
-export const styles = {
-    paddingY:''
+export const textStyles = {
+    text :'s' 
 }
 
 export const dimension = {

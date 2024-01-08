@@ -9,7 +9,7 @@ export const shoppingBagContainer = {
     aboutbagProduct:{
         property:'relative flex  justify-center gap-[1rem] mobile:h-[96%] ',
         bagProductList:'flex items-center justify-between w-full relative  ',
-        text:' font-plusJakartaSans font-[500] text-[1.063rem] phone-mtablet:text-[1rem] phone:text-[.7rem]',
+        text:' font-plusJakartaSans font-[500] text-[.9rem] phone-mtablet:text-[1rem] phone:text-[.7rem]',
     },
 
     productList:{
@@ -25,11 +25,11 @@ export const shoppingBagContainer = {
 
     priceContainer:{ 
         containerPriceProduct:'relative bg-[white] w-[40%]  mobile:absolute mobile:left-0 mobile:bottom-[0%] mobile:w-full mobile:w-[100%]',
-        size:'w-[470px] h-[auto] xl-tablet:w-[100%] mobile:w-[100%]',
+        size:'w-[400px] h-[auto] xl-tablet:w-[100%] mobile:w-[100%]',
         iconPay:"h-[21px] s-tablet:h-[17px] phone:h-[14px]",
         property:" z-[999] shadow-shopBagComponentsShadow rounded-[15px] gap-[.7rem] px-[1.75rem] py-[1rem] ",
-        checkButton:'bg-[#439CEF] text-[white] w-[180px] h-[40px] rounded-[5px] mx-auto phone-mtablet:w-full phone-mtablet:h-[30px]',
-        text:'text-[1.188rem]  text-black s-tablet:text-[1rem] phone:text-[.8rem]'
+        checkButton:'bg-[#439CEF] text-[white] w-[100%] h-[30px] rounded-[25px]   phone-mtablet:h-[20px]',
+        text:'text-[1rem]  text-black s-tablet:text-[1rem] phone:text-[.8rem]'
     }
 
 }
