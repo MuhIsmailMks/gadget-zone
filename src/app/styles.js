@@ -8,8 +8,16 @@ export const layout = {
     flexDirection: 'flex flex-col items-start',
 }
 
-export const textStyles = {
-    text :'s' 
+export const textStyles = { 
+    verySmallLato :'font-Lato text-[0.875rem] mobile:text-[.7rem]', 
+    smallLato :'font-Lato text-[1rem] mobile:text-[.85rem] phone:text-[.7rem]', 
+    mediumLato :'font-Lato text-[1.125rem] mobile:text-[.9rem]', 
+    largeLato :'font-Lato text-[1.25rem] mobile:text-[1rem]', 
+
+    verySmallInter :'font-inter text-[0.875rem] mobile:text-[.7rem]', 
+    smallInter :'  font-inter text-[1rem] mobile:text-[.85rem] phone:text-[.7rem]', 
+    mediumInter :'font-inter text-[1.125rem] mobile:text-[.9rem]', 
+    largeInter :'font-inter text-[1.25rem] mobile:text-[1rem]', 
 }
 
 export const dimension = {

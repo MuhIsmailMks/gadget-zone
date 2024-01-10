@@ -3,7 +3,7 @@ import React,{ useState } from 'react'
 import Link from 'next/link' 
 import {usePathname} from 'next/navigation'
 import Image from "next/image";
-import { layout ,dimension} from '../styles';
+import { layout ,dimension, textStyles} from '../styles';
 import  '../page.css';
 
 import { useSelector,useDispatch } from 'react-redux';
@@ -54,7 +54,7 @@ export default function Navigation() {
             className="menu relative items-center  mobile:bg-white mobile:absolute mobile:right-0 mobile:top-[100%]  mobile:w-[100%] mobile:z-30  mobile:px-[2rem] mobile:h-[auto] mobile:py-[2rem]  max-s-desktop:ml-[15%] x-desktop:ml-[30%]"
             id={menu === true ? "activeMenu" : "noActiveMenu"}
           >
-            <ul className="text-black flex   text-[1rem]  mobile:gap-[3rem] mobile:h-full mobile:flex-col   s-tablet:gap-[1.125rem]  ">
+            <ul className={`text-black flex    mobile:gap-[3rem] mobile:h-full mobile:flex-col   s-tablet:gap-[1.125rem]  ${textStyles.smallInter}`}>
               <li >
                <Link className={currentRoute === '/' ? "active" : ""} href={'/'}>Home</Link>
               </li>

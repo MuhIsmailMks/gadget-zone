@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import Image from 'next/image'
 
-import { layout,productCardStyles,textStyle,dimension } from '../styles' 
+import { layout,productCardStyles,textStyle,dimension, textStyles } from '../styles' 
 import { RatingProduct } from './Components'
 import formatCurrency from '../utilities/formatCurrency'
 
@@ -104,7 +104,7 @@ export default function Product(item) {
                  truerly == true ? <Favorite sx={{ color: pink[500],fontSize:favoriteSize() }} className={`FavoriteIcon`}  /> : <FavoriteBorder sx={{ color: grey[600],fontSize:favoriteSize() }} className={`FavoriteIcon`} />
                 }
                 </button>
-              <p className='font-saira text-[#8B8B8B] text-[0.938rem]'>{favoriteAmout}</p> 
+              <p className={`${textStyles.verySmallInter} text-[#8B8B8B] font-[600]`}>{favoriteAmout}</p> 
             </div>
 
        </div>
@@ -112,7 +112,7 @@ export default function Product(item) {
       {/* new product */}
       { item.newProduct ? (
               <div className={`new-product absolute text-white top-[1rem] right-0 ${layout.flexCenter} ${productCardStyles.newProductSize} bg-primary-color`}>
-              <p className={`font-maitre ${textStyle.newProductText} font-[400] h-[100%]`}>New</p>
+              <p className={`${textStyles.verySmallLato} font-[100] h-[100%]`}>New</p>
             </div>
         ):null} 
 
@@ -125,7 +125,7 @@ export default function Product(item) {
         {/* rating products */}
         <div className={`rating-product ${layout.flexStart}  w-[auto]  gap-[.6rem] `}>
           <RatingProduct ratingVal={item.rating}/> 
-          <p className={`${textStyle.accessibiltyCard}`}>({item.sales})</p>
+          <p className={`${textStyles.verySmallInter}`}>({item.sales})</p>
         </div>
 
        
