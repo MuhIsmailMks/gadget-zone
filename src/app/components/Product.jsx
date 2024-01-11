@@ -134,8 +134,8 @@ export default function Product(item) {
 
 
       {/* name product */}
-      <div className={`product-name ${layout.flexCenter} w-full ${productCardStyles.cardNameHeight} `}>
-        <h5 className={`font-plusJakartaSans font-[500] ${textStyle.productName} `}>{item.nameProduct}</h5>
+      <div className={`product-name ${layout.flexCenter} w-full ${productCardStyles.cardNameHeight} px-[.5rem] text-center`}>
+        <h5 className={`${textStyles.verySmallInter} font-[500] `}>{item.nameProduct}</h5>
       </div>
 
       {/* price product */}
