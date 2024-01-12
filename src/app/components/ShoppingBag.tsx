@@ -6,7 +6,7 @@ import { useSelector,useDispatch } from 'react-redux';
 import { closeBag } from '../GlobalRedux/Features/bagActions'; 
 import { RootState } from '../GlobalRedux/store'
 import formatCurrency from '../utilities/formatCurrency'
-import { layout } from '../styles'
+import { dimension, layout, textStyles } from '../styles'
 import { shoppingBagContainer } from '../styles/bagContainerStyles'
 
 interface Dimensions{
@@ -82,15 +82,15 @@ export default function ShoppingBag( ) {
           </button>
 
           {/* content & item section */}
-          <div className={`about-bag-product font-plusJakartaSans h-[80%] w-full ${shoppingBagContainer.aboutbagProduct.property} `}>
+          <div className={`about-bag-product font-plusJakartaSans h-[80%] w-full ${shoppingBagContainer.aboutbagProduct.property} ${dimension.paddingX_section}`}>
 
             <div className={`products-list ${shoppingBagContainer.productList.property}  ${shoppingBagContainer.productList.size} `}>
 
               <div className={`about-product w-[100%] h-[50px] phone:h-[40px] ${shoppingBagContainer.productList.aboutProductProperty}`}>
               
-                <div className={`bag-product-list ${shoppingBagContainer.aboutbagProduct.bagProductList}  ${shoppingBagContainer.aboutbagProduct.text}  `}>
-                    <h2 className='font-[700]'>Product List</h2>
-                    <div className={`flex items-center `}>
+                <div className={`bag-product-list ${shoppingBagContainer.aboutbagProduct.bagProductList}  ${textStyles.smallLato}  `}>
+                    <h2 className='font-[600]'>Product List</h2>
+                    <div className={`flex items-center`}>
                       <p>Price</p>
                       <p className='quantity'>Quantity</p>
                       <p>Total</p>
@@ -114,11 +114,11 @@ export default function ShoppingBag( ) {
 
             <div className={`price-product-container duration-[400ms] ${shoppingBagContainer.priceContainer.containerPriceProduct} ${drop === true ? 'drop' : ''}`}>
 
-              <div className={`price-container relative  ${layout.flexDirection} ${shoppingBagContainer.priceContainer.size} ${shoppingBagContainer.priceContainer.property} ${shoppingBagContainer.priceContainer.text} `}>
+              <div className={`price-container relative  ${layout.flexDirection} justify-center items-center  ${shoppingBagContainer.priceContainer.size} ${shoppingBagContainer.priceContainer.property} ${textStyles.smallLato} `}>
 
-                <div className={`${layout.flexBetween} w-full`}>
+                <div className={`${layout.flexBetween} ${shoppingBagContainer.priceContainer.itemProperty}`}>
                   
-                   <h3>Total</h3>
+                   <h3 className='font-[600]'>Total</h3>
             
                    {
                     dimensions.width >= 1100 ? null :   <div className={`drop-checkout-btn abso duration-[500ms] ${drop === true ? 'rotate-180' :''}`} onClick={() => dropdownCheck()}>
@@ -137,46 +137,46 @@ export default function ShoppingBag( ) {
 
               
 
-                <div className="line my-[.3rem] w-full h-[1px] bg-[#D7D7D7]"></div>
+                <div className={`${shoppingBagContainer.priceContainer.line}`}></div>
 
                 {/* payment checkout */}
-                <div className="payment-checkout container-in-total">
+                <div className={`payment-checkout ${shoppingBagContainer.priceContainer.itemProperty}`}>
                   <p>payment method:</p>
-                  <div className="payment flex gap-[.5rem]">
-                 
-                   {[
-              { icon: '/icons/mastercard-icon.svg', alt: "mastercard " },
-              { icon: '/icons/paypal-icon.svg', alt: "paypal " },
-              { icon: '/icons/visa-icon.svg' , alt: "bag "},
-              { icon: '/icons/debit-icon.svg' , alt: "debit "},
-            ].map((image, i) => (
-             
-                 <Image
-                src={image.icon} 
-                key={i} 
-                alt={image.alt} 
-                width={20}
-                height={20}
-                className={`w-auto object-contain ${shoppingBagContainer.priceContainer.iconPay}`}
-                priority
-              /> 
-             
+                      <div className="payment flex gap-[.5rem]">
+                    
+                      {[
+                  { icon: '/icons/mastercard-icon.svg', alt: "mastercard " },
+                  { icon: '/icons/paypal-icon.svg', alt: "paypal " },
+                  { icon: '/icons/visa-icon.svg' , alt: "bag "},
+                  { icon: '/icons/debit-icon.svg' , alt: "debit "},
+                ].map((image, i) => (
+                
+                    <Image
+                    src={image.icon} 
+                    key={i} 
+                    alt={image.alt} 
+                    width={20}
+                    height={20}
+                    className={`w-auto object-contain ${shoppingBagContainer.priceContainer.iconPay}`}
+                    priority
+                  /> 
+                
             ))} 
 
 
                   </div>
                 </div>
 
-                <div className="line my-[.3rem] w-full h-[1px] bg-[#D7D7D7]"></div>
+                <div className={`${shoppingBagContainer.priceContainer.line}`}></div>
 
                 {/* total items */}
-                <div className="items container-in-total">
+                <div className={`items ${shoppingBagContainer.priceContainer.itemProperty}`}>
                 <p>Items</p>
                  <span>  {  quantityProducts   }  </span>
                  </div>
 
                  {/* total-price */}
-                <div className="total-price container-in-total">  
+                <div className={`total-price ${shoppingBagContainer.priceContainer.itemProperty}`}>  
                  <p>Total</p>
                  <span>
                  {
@@ -186,7 +186,7 @@ export default function ShoppingBag( ) {
                 </div>
 
                 {/* discount */}
-                 <div className="discount container-in-total"> 
+                 <div className={`discount ${shoppingBagContainer.priceContainer.itemProperty}`}> 
                   <p>discount</p>
                   <span> 
                   -{
@@ -195,10 +195,10 @@ export default function ShoppingBag( ) {
                   </span>
                  </div>
 
-                 <div className="line my-[.3rem] w-full h-[1px] bg-[#D7D7D7]"></div>
+                 <div className={`${shoppingBagContainer.priceContainer.line}`}></div>
 
                  {/* subtotal */}
-                <div className="subTotal container-in-total">
+                <div className={`subTotal ${shoppingBagContainer.priceContainer.itemProperty}`}>
                   <p>Subtotal</p>
                   <span>
                      {
@@ -207,7 +207,7 @@ export default function ShoppingBag( ) {
                   </span>
                 </div>
 
-                <button className={`${shoppingBagContainer.priceContainer.checkButton}`}>Checkout</button>
+                <button className={`${shoppingBagContainer.priceContainer.checkButton} ${shoppingBagContainer.priceContainer.itemProperty}`}> <span className='w-full'>Checkout</span> </button>
 
               </div>
 

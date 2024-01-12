@@ -23,6 +23,8 @@ export const textStyles = {
 export const dimension = {
     Wfull_hAuto : 'w-[full] h-[auto]',
 
+    paddingX_section:"px-[3.938rem] mobile:px-[2.8rem] phone:px-[1.5rem]",
+
     // hero product button
     viewProduct: 'w-[164px] h-[32px] tablet:h-auto tablet:w-[140px] xl-phone:h-[25px] xl-phone:w-[110px]  x-phone:h-[19px] x-phone:w-[90px]',
 

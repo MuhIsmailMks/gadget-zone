@@ -7,13 +7,13 @@ export const shoppingBagContainer = {
     closeButton:'right-[2rem] absolute top-[1rem] w-[30px] h-[auto] cursor-pointer  xl-tablet:w-[24px] phone-mtablet:w-[22px] phone:w-[18px]',
 
     aboutbagProduct:{
-        property:'relative flex  justify-center gap-[1rem] mobile:h-[96%] ',
+        property:'relative flex  justify-between gap-[1rem] mobile:h-[96%] ',
         bagProductList:'flex items-center justify-between w-full relative  ',
         text:' font-plusJakartaSans font-[500] text-[.9rem] phone-mtablet:text-[1rem] phone:text-[.7rem]',
     },
 
     productList:{
-        size:'w-[691px] mobile:w-[100%]  ',
+        size:'w-[800px] mobile:w-[100%]  ',
         property:`${layout.flexDirection}  gap-[.5rem]`,
         aboutProductProperty:'bg-white flex justify-end text-black items-center px-[.5rem] gap-[.3rem]  shadow-shopBagComponentsShadow'
     },
@@ -24,12 +24,13 @@ export const shoppingBagContainer = {
     },
 
     priceContainer:{ 
-        containerPriceProduct:'relative bg-[white] w-[40%]  mobile:absolute mobile:left-0 mobile:bottom-[0%] mobile:w-full mobile:w-[100%]',
-        size:'w-[400px] h-[auto] xl-tablet:w-[100%] mobile:w-[100%]',
+        containerPriceProduct:'relative bg-[white] w-[auto]  mobile:absolute mobile:left-0 mobile:bottom-[0%] mobile:w-full mobile:w-[100%]',
+        size:'w-[400px] h-[439px] xl-tablet:w-[100%] mobile:w-[100%]',
         iconPay:"h-[21px] s-tablet:h-[17px] phone:h-[14px]",
-        property:" z-[999] shadow-shopBagComponentsShadow rounded-[15px] gap-[.7rem] px-[1.75rem] py-[1rem] ",
-        checkButton:'bg-[#439CEF] text-[white] w-[100%] h-[30px] rounded-[25px]   phone-mtablet:h-[20px]',
-        text:'text-[1rem]  text-black s-tablet:text-[1rem] phone:text-[.8rem]'
+        property:" z-[999] shadow-shopBagComponentsShadow rounded-[15px] gap-[.7rem]  py-[1rem] ",
+        checkButton:'bg-[#439CEF] text-[white] rounded-[25px]  phone-mtablet:h-[20px]', 
+        itemProperty:'w-[366px] h-[30px] flex justify-between',
+        line:"line my-[.3rem] w-full h-[1px] bg-[#D7D7D7]"
     }
 
 }
