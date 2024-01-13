@@ -61,12 +61,12 @@ module.exports = {
       },
 
       // font family
-      fontFamily: {
-        'plusJakartaSans': ['Plus Jakarta Sans', 'sans-serif'], 
+      fontFamily: { 
         'Lato': ['Lato', 'sans-serif'],
-        'maitre': ['Maitree', 'serif'],
-        'saira': ['Saira', 'sans-serif'],
         'inter': ['Inter', 'sans-serif'],
+        'maitre': ['Maitree', 'serif'],
+        'plusJakartaSans': ['Plus Jakarta Sans', 'sans-serif'],
+        'saira': ['Saira', 'sans-serif'],
         'kufam': ['Kufam', 'sans-serif'],
       },
 
@@ -75,9 +75,11 @@ module.exports = {
         'bgImage': "url('/src/app/images/headerimage1.png')", 
 
         
-        'prevButtonHeader': "url('/src/app/icons/prevButton.svg')", 
-        'nextButtonHeader': "url('/src/app/icons/nextButton.svg')", 
+        'prevButtonHeader': "url('src/app/icons/prevButton.svg')", 
+        'nextButtonHeader': "url('src/app/icons/nextButton.svg')", 
       }, 
+
+     
     },
   },
   plugins: [],

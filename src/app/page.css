@@ -161,8 +161,21 @@ div.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal > s
 /* bag */
 .bag-container.active{
     @apply bg-[#F5F5F5] duration-[.4s] ease-in-out translate-y-[10%] border-l rounded-[30px] tablet:translate-y-[0%] phone:translate-y-[0%];
+} 
+
+.product-list-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.product-list-container::-webkit-scrollbar-track {
+    background-color: #000000;
+}
+
+.product-list-container::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 255, 255);
 }
  
+
 .bag-product-list p{
     @apply w-[100px] max-w-[100%] text-center  xl-tablet:w-[150px] phone-mtablet:w-[100px] phone:w-[70px];
 }
@@ -171,6 +184,9 @@ div.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal > s
     @apply phone:w-[100px];
 }
  
+.price_gradients_bg{ 
+    background: linear-gradient(38deg, #010021 14.09%, rgba(35, 34, 36, 0.73) 107.06%); 
+}
 
 .price-product-container div  span{
     @apply font-[700]  !important;

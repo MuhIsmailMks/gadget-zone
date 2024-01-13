@@ -114,7 +114,7 @@ export default function ShoppingBag( ) {
 
             <div className={`price-product-container duration-[400ms] ${shoppingBagContainer.priceContainer.containerPriceProduct} ${drop === true ? 'drop' : ''}`}>
 
-              <div className={`price-container relative  ${layout.flexDirection} justify-center items-center  ${shoppingBagContainer.priceContainer.size} ${shoppingBagContainer.priceContainer.property} ${textStyles.smallLato} `}>
+              <div className={`price-container relative price_gradients_bg ${layout.flexCenter} flex-col  ${shoppingBagContainer.priceContainer.size} ${shoppingBagContainer.priceContainer.property} ${textStyles.smallLato} `}>
 
                 <div className={`${layout.flexBetween} ${shoppingBagContainer.priceContainer.itemProperty}`}>
                   
