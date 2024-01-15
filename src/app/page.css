@@ -164,24 +164,20 @@ div.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal > s
 } 
 
 .product-list-container::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
 }
 
 .product-list-container::-webkit-scrollbar-track {
-    background-color: #000000;
+    background-color: #2e2e2e;
 }
 
 .product-list-container::-webkit-scrollbar-thumb {
-    background-color: rgb(255, 255, 255);
+    @apply bg-primary-color;
 }
- 
+  
 
-.bag-product-list p{
-    @apply w-[100px] max-w-[100%] text-center  xl-tablet:w-[150px] phone-mtablet:w-[100px] phone:w-[70px];
-}
-
-.bag-product-list .quantity{
-    @apply phone:w-[100px];
+.quntity_product{
+    @apply phone-mtablet:w-[120px] phone:w-[100px];
 }
  
 .price_gradients_bg{ 
@@ -193,9 +189,9 @@ div.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal > s
 }
  
 .about-product-bag div{
-    @apply   h-full flex items-center  justify-center  mobile:w-[150px]  mobile:text-center;
+    @apply  flex items-center  justify-center  mobile:text-center;
 }
 
 .price-product-container.drop{
-    @apply  mobile:translate-y-[86%];
+    @apply  mobile:translate-y-[80%] phone-mtablet:translate-y-[70%]  mobile:py-[1rem] phone-mtablet:py-[3rem];
 }

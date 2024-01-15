@@ -164,7 +164,7 @@ export default function Product(item) {
          
         <div className={`${layout.flexDirection} items-center  relative`}>
 
-            <button  onClick={removeProduct} className={`remove-item-from-bag w-[100px] h-[25px] bg-[#FF0000] rounded-[5px] ${productCardStyles.text_handle_add_remove}`}>remove</button>
+            <button  onClick={removeProduct} className={`remove-item-from-bag w-[100px] h-[25px] tablet:h-[20px]  bg-[#FF0000] rounded-[5px] ${productCardStyles.text_handle_add_remove}`}>remove</button>
 
         </div>
        :  

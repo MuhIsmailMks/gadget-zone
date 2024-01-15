@@ -82,19 +82,20 @@ export default function ShoppingBag( ) {
           </button>
 
           {/* content & item section */}
-          <div className={`about-bag-product font-plusJakartaSans h-[80%] w-full ${shoppingBagContainer.aboutbagProduct.property} ${dimension.paddingX_section}`}>
-
+          <div className={`about-bag-product h-[80%] w-full ${shoppingBagContainer.aboutbagProduct.property} ${dimension.paddingX_section}`}>
+            
+            {/* product list / description product*/}
             <div className={`products-list ${shoppingBagContainer.productList.property}  ${shoppingBagContainer.productList.size} `}>
 
-              <div className={`about-product w-[100%] h-[50px] phone:h-[40px] ${shoppingBagContainer.productList.aboutProductProperty}`}>
+              <div className={`about-product  ${shoppingBagContainer.productList.aboutProductContainer}`}>
               
                 <div className={`bag-product-list ${shoppingBagContainer.aboutbagProduct.bagProductList}  ${textStyles.smallLato}  `}>
                     <h2 className='font-[600]'>Product List</h2>
                     <div className={`flex items-center`}>
-                      <p>Price</p>
-                      <p className='quantity'>Quantity</p>
-                      <p>Total</p>
-                      <p>Remove</p>
+                      <p className={`${shoppingBagContainer.productList.description_size}`}>Price</p>
+                      <p className={`${shoppingBagContainer.productList.description_size} quntity_product`}  >Quantity</p>
+                      <p className={`${shoppingBagContainer.productList.description_size}`}>Total</p>
+                      <p className={`${shoppingBagContainer.productList.description_size}`}>Remove</p>
                     </div> 
                 </div>
 
@@ -111,7 +112,9 @@ export default function ShoppingBag( ) {
               </div>
 
             </div>
-
+            
+            
+            {/* price product / description price*/}
             <div className={`price-product-container duration-[400ms] ${shoppingBagContainer.priceContainer.containerPriceProduct} ${drop === true ? 'drop' : ''}`}>
 
               <div className={`price-container relative price_gradients_bg ${layout.flexCenter} flex-col  ${shoppingBagContainer.priceContainer.size} ${shoppingBagContainer.priceContainer.property} ${textStyles.smallLato} `}>
@@ -207,13 +210,15 @@ export default function ShoppingBag( ) {
                   </span>
                 </div>
 
-                <button className={`${shoppingBagContainer.priceContainer.checkButton} ${shoppingBagContainer.priceContainer.itemProperty}`}> <span className='w-full'>Checkout</span> </button>
+                <button className={`${shoppingBagContainer.priceContainer.checkButton} ${shoppingBagContainer.priceContainer.itemProperty}`}> <span className='w-full  '>Checkout</span> </button>
 
               </div>
 
 
         
             </div>
+
+
 
           </div>
 

@@ -200,9 +200,8 @@ export default function Home() {
             </div>
 
             <div
-              className={`products-container mt-[4rem] mx-[auto] max-w-[1700px] ${layout.flexCenter}   content-start  flex-wrap ${dimension.Wfull_hAuto} s-desktop:px-[2rem] tablet:px-[2.5rem] phone:px-[1.5rem] gap-[1.5rem]`}
-            >
-              {/* <Cards /> */}
+              className={`products-container mt-[4rem] mx-[auto] max-w-[1500px] ${layout.flexCenter}   content-start  flex-wrap ${dimension.Wfull_hAuto} s-desktop:px-[2rem] tablet:px-[2.5rem] phone:px-[1.5rem] gap-[1.5rem]`}
+            > 
               {dataProducts.slice(0,10).map((item,id ) => ( 
                         <Product {...item}  key={id}/>  
                 ))}   

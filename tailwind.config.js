@@ -32,7 +32,7 @@ module.exports = {
         // phone
         'phone': { 'max': '601px' },
         'xl-phone': { 'min': '430px', 'max': '601px' },
-        'x-phone': { 'min': '1px', 'max': '429px' },  
+        'x-phone': { 'min': '1px', 'max': '429.99px' },  
   
         // Max width
         'max-s-desktop': { 'min': '1200px', 'max': '1400px' },
@@ -57,7 +57,7 @@ module.exports = {
         'smallBoxShadow1': ' 0px 4px 108px 6vw rgba(255, 255, 255, 0.351)',
         'smallBoxShadowPhone1': ' 0px 4px 80px 37px rgba(255, 255, 255, 0.351)',
         'smallBoxShadow2': ' 0px 4px 88px 72px rgba(255, 255, 255, 0.251)',
-        'shopBagComponentsShadow': '  0px 4px 6.2px -1px rgba(0, 0, 0, 0.26)',
+        'shopBagComponentsShadow': ' 0px 1px 8.5px -1px rgba(0, 0, 0, 0.32)',
       },
 
       // font family

@@ -14,8 +14,8 @@ export const textStyles = {
     mediumLato :'font-Lato text-[1.125rem] mobile:text-[.9rem]', 
     largeLato :'font-Lato text-[1.25rem] mobile:text-[1rem]', 
 
-    verySmallInter :'font-inter text-[0.875rem] mobile:text-[.7rem]', 
-    smallInter :'  font-inter text-[1rem] mobile:text-[.85rem] phone:text-[.7rem]', 
+    verySmallInter :'font-inter text-[0.875rem] mobile:text-[.7rem]  phone:text-[.6rem]', 
+    smallInter :'  font-inter text-[1rem] mobile:text-[.85rem] phone-mtablet:text-[.7rem] phone:text-[.6rem]', 
     mediumInter :'font-inter text-[1.125rem] mobile:text-[.9rem]', 
     largeInter :'font-inter text-[1.25rem] mobile:text-[1rem]', 
 }

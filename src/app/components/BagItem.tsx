@@ -38,11 +38,11 @@ export default function BagItem(item) {
               <div className="image-product h-[100%] w-[140px] flex items-center justify-center ">
                 <img src={`${item.imageUrl}`} alt="" className={`object-contain my-auto ${bagItem.component.imageSize}`} />
               </div> 
-              <p className={`w-[150px] py-[.8rem]  ${textStyles.smallInter}`}>{item.nameProduct}</p>
+              <p className={`w-[150px] py-[.8rem]  ${textStyles.verySmallInter}`}>{item.nameProduct}</p>
             </section>
 
             {/* about product in bag */}
-            <div className={`about-product-bag h-[100%] flex items-center  ${textStyles.smallInter}`}>
+            <div className={`about-product-bag h-[100%] flex items-center  ${textStyles.verySmallInter}`}>
 
                
                <div id='price-product ' className={`relative ${shoppingBagContainer.productList.description_size} ${layout.flexDirection}`}>
@@ -52,7 +52,7 @@ export default function BagItem(item) {
                       if(items.id === item.id){ 
                         if(item.discountPrice)
                          return (
-                          <p className={`line-through bg-primary-color w-[90%] text-[red] ${textStyles.verySmallInter}`}>
+                          <p className={`line-through w-[90%] text-[red] `}>
                             {
                               formatCurrency(items.discountPrice)
                             }
@@ -64,12 +64,12 @@ export default function BagItem(item) {
                     })
                   } 
 
-                  <p className='w-[90%] bg-primary-color'>{formatCurrency(item.price)}</p>
+                  <p className='w-[90%]'>{formatCurrency(item.price)}</p>
                </div>
              
 
               {/* quantity */}
-              <div className={`justify-center ${shoppingBagContainer.productList.description_size} gap-[0.625rem]  `}>
+              <div className={`quntity_product justify-between ${shoppingBagContainer.productList.description_size} gap-[0.925rem]  `}>
                 <button className='border-none outline-none select-none' onClick={() => lessQuantity(item.id)}>
                    <Image
                    alt='decreaseQuantity'
@@ -112,7 +112,7 @@ export default function BagItem(item) {
 
               <div className={`remove-item  relative ${shoppingBagContainer.productList.description_size}  h-[100%] flex justify-center items-center`}  >
                  <img src="/icons/remove-product-icon.svg" alt="" 
-                 className='w-[auto] cursor-pointer  h-[21.05px] object-cover'
+                 className='w-[auto] cursor-pointer  h-[21.05px] object-cover mobile:h-[24px]'
                  onClick={() => handleRemoveClick(item.id)}
                  />
               </div>
