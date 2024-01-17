@@ -335,7 +335,7 @@ export const RatingProduct = ({ratingVal}) => {
  
 
   return (
-    <div className={`stars-container ${layout.flexCenter} relative w-[100px]`}>  
+    <div className={`stars-container ${layout.flexCenter} relative w-[100px] mobile:w-[90px] phone:w-[50px]`}>  
       <div className={`star-rating relative w-[100%] z-[2] ${layout.flexStart} gap-[5px] phone:gap-[2px]`}>
          {starArray} 
       </div>

@@ -34,6 +34,7 @@ module.exports = {
         'xl-phone': { 'min': '430px', 'max': '601px' },
         'x-phone': { 'min': '1px', 'max': '429.99px' },  
   
+        // don't usage  below this
         // Max width
         'max-s-desktop': { 'min': '1200px', 'max': '1400px' },
         'max-xl-tablet': { 'min': '800px', 'max': '1200px' },

@@ -1,15 +1,13 @@
+import { textStyles } from "../styles"
+
 export const productContainer = {
-    dekstop:'',
-    tablet:'',
-    phone:''
+    size:"",
+    property:""
 }
 
-export const productStyling = {
-    properti:""
+export const productComponentStyles = {
+    properti:"",
+    buttonHandler:`w-[134px] h-[25px] max-w-[90%] phone-mtablet:h-[20px] x-phone:h-[17px] ${textStyles.verySmallInter} text-white rounded-[8px]`,
+    iconBagButton:'h-[16px] w-[auto] s_desktop-xl_tablet:h-[14px] mobile:h-[12px] phone:h-[10px]'
 }
-
-export const productText = {
-    price: "",
-    name: "",
-    sales: "",
-}
+ 

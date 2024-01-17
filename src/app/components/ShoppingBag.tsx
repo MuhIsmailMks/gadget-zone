@@ -115,7 +115,7 @@ export default function ShoppingBag( ) {
             
             
             {/* price product / description price*/}
-            <div className={`price-product-container duration-[400ms] ${shoppingBagContainer.priceContainer.containerPriceProduct} ${drop === true ? 'drop' : ''}`}>
+            <div className={`price-product-container duration-[400ms] ${shoppingBagContainer.priceContainer.containerPriceProduct} ${drop === false ? 'drop' : ''}`}>
 
               <div className={`price-container relative price_gradients_bg ${layout.flexCenter} flex-col  ${shoppingBagContainer.priceContainer.size} ${shoppingBagContainer.priceContainer.property} ${textStyles.smallLato} `}>
 
@@ -124,7 +124,7 @@ export default function ShoppingBag( ) {
                    <h3 className='font-[600]'>Total</h3>
             
                    {
-                    dimensions.width >= 1100 ? null :   <div className={`drop-checkout-btn abso duration-[500ms] ${drop === true ? 'rotate-180' :''}`} onClick={() => dropdownCheck()}>
+                    dimensions.width >= 1100 ? null :   <div className={`drop-checkout-btn abso duration-[500ms] ${drop === false ? 'rotate-180' :''}`} onClick={() => dropdownCheck()}>
                       <Image
                         src='icons/dropdown-checkout.svg'
                         alt='checkout btn'

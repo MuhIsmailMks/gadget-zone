@@ -12,6 +12,7 @@ import { pink,grey } from "@mui/material/colors";
 // redux
 import { useDispatch ,useSelector} from 'react-redux';
 import {  addToBag,removeItems } from '../GlobalRedux/Features/shoppingSlice'
+import { productComponentStyles } from '../styles/productStyles'
  
 
 
@@ -147,7 +148,7 @@ export default function Product(item) {
  
         { item.discountPrice !== undefined ? (
             <div className="discount-price w-[50%]"> 
-              <p className={`text-red-500 font-[400] line-through ${textStyle.offProductPrice}`}>{
+              <p className={`text-red-500 line-through  font-[400] ${textStyle.offProductPrice}`}>{
               formatCurrency(item.discountPrice)
               } 
               </p>
@@ -164,17 +165,17 @@ export default function Product(item) {
          
         <div className={`${layout.flexDirection} items-center  relative`}>
 
-            <button  onClick={removeProduct} className={`remove-item-from-bag w-[100px] h-[25px] tablet:h-[20px]  bg-[#FF0000] rounded-[5px] ${productCardStyles.text_handle_add_remove}`}>remove</button>
+            <button  onClick={removeProduct} className={`remove-item-from-bag bg-[#FF0000]  ${productComponentStyles.buttonHandler} `}>Remove</button>
 
         </div>
        :  
-         <button   className={`add-bag mx-auto w-[134px] rounded-[10px] h-[25px] bg-primary-color ${layout.flexCenter} tablet:w-[100px] tablet:h-[20px] phone:w-[70%] phone:h-[18px] gap-[0.688rem] cursor-pointer`} onClick={hendleAddToBag}>
-            <span className={`${productCardStyles.text_handle_add_remove}`}>Add Bag</span>
+         <button   className={`add-bag mx-auto    bg-primary-color ${layout.flexCenter} cursor-pointer gap-[.5rem] ${productComponentStyles.buttonHandler}`} onClick={hendleAddToBag}>
+            <span  >Add Bag</span>
             <Image
-            src='/bag-icon.svg'
-            height={100}
-            width={100}
-            className='h-[16px] w-[auto] s_desktop-xl_tablet:h-[14px] mobile:h-[12px] '
+            src='bag-icon.svg'
+            height={10}
+            width={7}
+            className={`${productComponentStyles.iconBagButton}`}
             alt='bag'
             />
       </button>
@@ -183,6 +184,6 @@ export default function Product(item) {
 
     </div>
 
-</div>
+    </div>
   )
 }

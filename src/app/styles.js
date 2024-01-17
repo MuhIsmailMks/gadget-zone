@@ -8,16 +8,23 @@ export const layout = {
     flexDirection: 'flex flex-col items-start',
 }
 
-export const textStyles = { 
-    verySmallLato :'font-Lato text-[0.875rem] mobile:text-[.7rem]', 
-    smallLato :'font-Lato text-[1rem] mobile:text-[.85rem] phone:text-[.7rem]', 
-    mediumLato :'font-Lato text-[1.125rem] mobile:text-[.9rem]', 
-    largeLato :'font-Lato text-[1.25rem] mobile:text-[1rem]', 
+const fontSize = {
+    verySmallFont:"text-[0.875rem] mobile:text-[.7rem]  phone:text-[.6rem] x-phone:text-[.55rem]",
+    smallFont : 'text-[1rem] mobile:text-[.85rem] phone-mtablet:text-[.75rem] phone:text-[.65rem] x-phone:text-[.585rem]',
+    mediumFont:"text-[1.125rem] mobile:text-[.9rem]",
+    largeFont:"text-[1.25rem] mobile:text-[1rem]"
+}
 
-    verySmallInter :'font-inter text-[0.875rem] mobile:text-[.7rem]  phone:text-[.6rem]', 
-    smallInter :'  font-inter text-[1rem] mobile:text-[.85rem] phone-mtablet:text-[.7rem] phone:text-[.6rem]', 
-    mediumInter :'font-inter text-[1.125rem] mobile:text-[.9rem]', 
-    largeInter :'font-inter text-[1.25rem] mobile:text-[1rem]', 
+export const textStyles = {  
+    verySmallLato :`'font-Lato ${fontSize.verySmallFont}`, 
+    smallLato :`font-Lato ${fontSize.smallFont}`, 
+    mediumLato :`font-Lato ${fontSize.mediumFont}`, 
+    largeLato :`font-Lato  ${fontSize.largeFont}`, 
+
+    verySmallInter :`font-inter ${fontSize.verySmallFont}`, 
+    smallInter :`font-inter ${fontSize.smallFont}`, 
+    mediumInter :`font-inter ${fontSize.mediumFont}`, 
+    largeInter :`font-inter  ${fontSize.largeFont}`, 
 }
 
 export const dimension = {

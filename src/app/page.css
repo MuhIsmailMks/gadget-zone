@@ -160,7 +160,7 @@ div.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal > s
   
 /* bag */
 .bag-container.active{
-    @apply bg-[#F5F5F5] duration-[.4s] ease-in-out translate-y-[10%] border-l rounded-[30px] tablet:translate-y-[0%] phone:translate-y-[0%];
+    @apply bg-[#F5F5F5] duration-[.4s] ease-in-out translate-y-[10%] border-l rounded-[30px] mobile:translate-y-[0%] ;
 } 
 
 .product-list-container::-webkit-scrollbar {
@@ -177,7 +177,7 @@ div.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal > s
   
 
 .quntity_product{
-    @apply phone-mtablet:w-[120px] phone:w-[100px];
+    @apply phone-mtablet:w-[120px] phone:w-[80px]  ;
 }
  
 .price_gradients_bg{ 
@@ -193,5 +193,5 @@ div.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal > s
 }
 
 .price-product-container.drop{
-    @apply  mobile:translate-y-[80%] phone-mtablet:translate-y-[70%]  mobile:py-[1rem] phone-mtablet:py-[3rem];
+    @apply  mobile:translate-y-[80%] phone-mtablet:translate-y-[70%]  mobile:py-[1rem] phone-mtablet:py-[3rem] phone:translate-y-[75%];
 }

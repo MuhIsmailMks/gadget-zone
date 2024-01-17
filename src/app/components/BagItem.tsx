@@ -35,14 +35,14 @@ export default function BagItem(item) {
 
             {/* image & name product in bag */}
             <section className={`${bagItem.component.image_name_product}`}>
-              <div className="image-product h-[100%] w-[140px] flex items-center justify-center ">
+              <div className="image-product h-[100%] w-[100%] flex items-center justify-center ">
                 <img src={`${item.imageUrl}`} alt="" className={`object-contain my-auto ${bagItem.component.imageSize}`} />
               </div> 
-              <p className={`w-[150px] py-[.8rem]  ${textStyles.verySmallInter}`}>{item.nameProduct}</p>
+              <p className={`w-[150px] phone:w-[100%] pt-[.8rem]  ${textStyles.verySmallInter}`}>{item.nameProduct}</p>
             </section>
 
             {/* about product in bag */}
-            <div className={`about-product-bag h-[100%] flex items-center  ${textStyles.verySmallInter}`}>
+            <div className={`about-product-bag h-[100%] flex items-center gap-[.01rem]  ${textStyles.verySmallInter}`}>
 
                
                <div id='price-product ' className={`relative ${shoppingBagContainer.productList.description_size} ${layout.flexDirection}`}>
@@ -69,14 +69,14 @@ export default function BagItem(item) {
              
 
               {/* quantity */}
-              <div className={`quntity_product justify-between ${shoppingBagContainer.productList.description_size} gap-[0.925rem]  `}>
+              <div className={`quntity_product justify-between ${shoppingBagContainer.productList.description_size} gap-[0.925rem] phone:gap-[.5rem] `}>
                 <button className='border-none outline-none select-none' onClick={() => lessQuantity(item.id)}>
                    <Image
                    alt='decreaseQuantity'
                    height={20}
                    width={20}
                    src="/icons/decrease-quantity.svg"
-                  className='object-contain w-[23px] h-[auto] '
+                  className={`${bagItem.component.iconButtonQuantity}`}
                   />
                 </button>
                 <p id='quantity-text'>
@@ -90,7 +90,7 @@ export default function BagItem(item) {
                    height={20}
                    width={20}
                   src="/icons/increase-quantity.svg"
-                  className='object-contain w-[23px] h-[auto] '
+                  className={`${bagItem.component.iconButtonQuantity}`}
                   />
                 </button>
               </div>
@@ -112,7 +112,7 @@ export default function BagItem(item) {
 
               <div className={`remove-item  relative ${shoppingBagContainer.productList.description_size}  h-[100%] flex justify-center items-center`}  >
                  <img src="/icons/remove-product-icon.svg" alt="" 
-                 className='w-[auto] cursor-pointer  h-[21.05px] object-cover mobile:h-[24px]'
+                 className={`${bagItem.component.removeItemIcon}`}
                  onClick={() => handleRemoveClick(item.id)}
                  />
               </div>
