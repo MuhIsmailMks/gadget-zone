@@ -195,3 +195,4 @@ div.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal > s
 .price-product-container.drop{
     @apply  mobile:translate-y-[80%] phone-mtablet:translate-y-[70%]  mobile:py-[1rem] phone-mtablet:py-[3rem] phone:translate-y-[75%];
 }
+

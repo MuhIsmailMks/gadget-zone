@@ -87,7 +87,7 @@ export default function Navigation() {
                 alt={image.alt} 
                 width={20}
                 height={20}
-                className={`h-[37px] w-full object-contain tablet:h-[39px] s-tablet:h-[33px]  phone:h-[30px] x-phone:h-[25px]  relative `}
+                className={`h-[37px] w-full object-contain tablet:h-[39px] s-tablet:h-[37px]  phone:h-[33px] x-phone:h-[28px]   relative `}
                 priority
               />
               {

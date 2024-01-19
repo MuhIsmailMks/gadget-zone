@@ -1,18 +1,17 @@
 import React,{useState,useEffect} from 'react'
 import Image from 'next/image'
 
-import { layout,productCardStyles,textStyle,dimension, textStyles } from '../styles' 
+import { layout,textStyle,dimension, textStyles } from '../styles' 
 import { RatingProduct } from './Components'
-import formatCurrency from '../utilities/formatCurrency'
-
+import formatCurrency from '../utilities/formatCurrency' 
 // material ui
 import { FavoriteBorder,Favorite } from '@mui/icons-material' 
-import { ThemeProvider, createTheme } from "@mui/material/styles";  
+import {  createTheme } from "@mui/material/styles";  
 import { pink,grey } from "@mui/material/colors"; 
 // redux
 import { useDispatch ,useSelector} from 'react-redux';
 import {  addToBag,removeItems } from '../GlobalRedux/Features/shoppingSlice'
-import { productComponentStyles } from '../styles/productStyles'
+import { productComponentStyles ,productCardStyles} from '../styles/productStyles'
  
 
 
@@ -49,7 +48,7 @@ export default function Product(item) {
 
   // favorite handler
   const [truerly,setTruerly] = useState(false)
-  const [favoriteAmout,setFavoriteAmout] = useState(item.favoriteCount)
+  const [favoriteAmout,setFavoriteAmout] = useState(item.favoriteCount);
   createTheme({
     palette: {
       primary: {
@@ -81,10 +80,10 @@ export default function Product(item) {
 
 
   return (
-    <div className={`card-product transition-all duration-[500ms]  ease-in-out ${productCardStyles.cardSize} ${productCardStyles.padding} relative drop-shadow-card bg-white`}  key={item.id}>
+    <div className={`card-product ${productCardStyles.size}  ${productCardStyles.property}`} key={item.id}>
 
     {/* image container product */}
-    <div className={`image-product ${layout.flexCenter} w-[full] ${productCardStyles.cardImageHeight} relative bg-[#ECECEC] overflow-hidden`}>
+    <div className={`image-product ${layout.flexCenter} ${productComponentStyles.cardImageStyle}  `}>
 
       {/* image product */}
        <Image
@@ -97,8 +96,8 @@ export default function Product(item) {
         />  
  
 
-         {/* handle card */}
-      <div className={`handle-card ${layout.flexDirection} absolute left-[.5rem] top-[1rem]  w-auto gap-[.4rem]`}> 
+         {/* favorite product*/}
+      <div className={`handle-card ${layout.flexDirection} ${productComponentStyles.favoriteStyle}`}> 
             <div className={`favorite w-[30px] ${layout.flexDirection} items-center`}>
                 <button onClick={() =>  handleFavoriteCard()}>  
                 {
@@ -112,7 +111,7 @@ export default function Product(item) {
 
       {/* new product */}
       { item.newProduct ? (
-              <div className={`new-product absolute text-white top-[1rem] right-0 ${layout.flexCenter} ${productCardStyles.newProductSize} bg-primary-color`}>
+              <div className={`new-product absolute text-white top-[1rem] right-0 ${layout.flexCenter} ${productComponentStyles.newProductSize} bg-primary-color`}>
               <p className={`${textStyles.verySmallLato} font-[100] h-[100%]`}>New</p>
             </div>
         ):null} 
@@ -135,7 +134,7 @@ export default function Product(item) {
 
 
       {/* name product */}
-      <div className={`product-name ${layout.flexCenter} w-full ${productCardStyles.cardNameHeight} px-[.5rem] text-center`}>
+      <div className={`product-name ${layout.flexCenter} w-full ${productComponentStyles.cardNameHeight} px-[.5rem] text-center`}>
         <h5 className={`${textStyles.verySmallInter} font-[500] `}>{item.nameProduct}</h5>
       </div>
 

@@ -80,7 +80,7 @@ export const textStyle = {
 // product card styles
 export const productCardStyles = { 
     // product card size
-    cardSize : "overflow-hidden s-desktop:h-[auto] s-desktop:w-[230px] tablet:w-[190px] phone:w-[140px]", 
+    cardSize : "overflow-hidden s-desktop:h-[auto] s-desktop:w-[230px] tablet:w-[190px] phone:w-[140px]",  
     padding:'pb-[.85rem]',
     newProductSize:'s-desktop:w-[42px] s-desktop:h-[18px] tablet:w-[37px] tablet:h-[18px] phone:w-[35px] phone:h-[13px]',
     cardImageHeight:"s-desktop:h-[152px] tablet:h-[135px] phone:h-[100px]",
