@@ -43,7 +43,7 @@ export const containerBagItem = {
 }
 
 export const bagItem = {
-    size:' w-[99.5%] h-[110px] min-w-[100px] mobile:min-h-[70px] mobile:h-[auto] phone:min-h-[40px]  ', 
+    size:' w-[99.5%] h-[110px] min-w-[100px] mobile:min-h-[90px] mobile:h-[auto]    ', 
     property:`relative 
     shadow-shopBagComponentsShadow flex items-center justify-between px-[.5rem] mobile:py-[.4rem] phone-mtablet:pt-[.5rem]`,
     component:{

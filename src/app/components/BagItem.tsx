@@ -48,11 +48,11 @@ export default function BagItem(item) {
                <div id='price-product ' className={`relative ${shoppingBagContainer.productList.description_size} ${layout.flexDirection}`}>
 
                   {
-                    bagItems.map(items => {
+                    bagItems.map((items, index) => {
                       if(items.id === item.id){ 
                         if(item.discountPrice)
                          return (
-                          <p className={`line-through w-[90%] text-[red] `}>
+                          <p className={`line-through w-[90%] text-[red] `} key={index}>
                             {
                               formatCurrency(items.discountPrice)
                             }

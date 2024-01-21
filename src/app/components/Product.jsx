@@ -83,7 +83,7 @@ export default function Product(item) {
     <div className={`card-product ${productCardStyles.size}  ${productCardStyles.property}`} key={item.id}>
 
     {/* image container product */}
-    <div className={`image-product ${layout.flexCenter} ${productComponentStyles.cardImageStyle}  `}>
+    <div className={`image-product ${layout.flexCenter} ${productComponentStyles.cardImageStyle}`}>
 
       {/* image product */}
        <Image
@@ -111,19 +111,19 @@ export default function Product(item) {
 
       {/* new product */}
       { item.newProduct ? (
-              <div className={`new-product absolute text-white top-[1rem] right-0 ${layout.flexCenter} ${productComponentStyles.newProductSize} bg-primary-color`}>
+              <div className={`new-product  ${layout.flexCenter} ${productComponentStyles.newProductStyle} `}>
               <p className={`${textStyles.verySmallLato} font-[100] h-[100%]`}>New</p>
             </div>
         ):null} 
 
     </div>
 
-    <div className={`about-product relative ${dimension.Wfull_hAuto} p-[.4rem]`}>
+    <div className={`about-product relative p-[.4rem] ${dimension.Wfull_hAuto}`}>
       
       {/* accessibilty product */}
-      <div className={`accessibilty-card ${layout.flexBetween} w-full relative`}>
+      <div className={`accessibilty-card w-full relative ${layout.flexBetween}`}>
         {/* rating products */}
-        <div className={`rating-product ${layout.flexStart}  w-[auto]  gap-[.6rem] `}>
+        <div className={`rating-productw-[auto]  gap-[.6rem]  ${layout.flexStart}  `}>
           <RatingProduct ratingVal={item.rating}/> 
           <p className={`${textStyles.verySmallInter}`}>({item.sales})</p>
         </div>
@@ -134,15 +134,15 @@ export default function Product(item) {
 
 
       {/* name product */}
-      <div className={`product-name ${layout.flexCenter} w-full ${productComponentStyles.cardNameHeight} px-[.5rem] text-center`}>
-        <h5 className={`${textStyles.verySmallInter} font-[500] `}>{item.nameProduct}</h5>
+      <div className={`product-name ${layout.flexCenter} ${productComponentStyles.cardNameStyle}`}>
+        <h5 className={`font-[500] ${textStyles.verySmallInter}`}>{item.nameProduct}</h5>
       </div>
 
       {/* price product */}
-      <div className={`price-product w-full relative ${layout.flexCenter} font-plusJakartaSans gap-[.5rem] phone:gap-[.2em] mb-[1rem]`}>
+      <div className={`price-product ${productCardStyles.priceProductContainer} `}>
  
         <div className={`price w-[auto] min-w-[50%]  ${item.discountPrice ? layout.flexEnd : layout.flexCenter }`}>
-          <p className={`font-[600] ${textStyle.productPrice}`}> {formatCurrency(item.price)} </p>
+          <p className={`${textStyles.verySmallInter}`}> {formatCurrency(item.price)} </p>
         </div>
  
         { item.discountPrice !== undefined ? (
@@ -152,23 +152,20 @@ export default function Product(item) {
               } 
               </p>
             </div>
-          ):null} 
-        
-      </div>
-
-
+          ):null}  
+      </div> 
 
       {/* card product handler add, quantity and remove */}
       {
         productInBag ? 
          
-        <div className={`${layout.flexDirection} items-center  relative`}>
+        <div className={`items-center  relative ${layout.flexDirection} `}>
 
             <button  onClick={removeProduct} className={`remove-item-from-bag bg-[#FF0000]  ${productComponentStyles.buttonHandler} `}>Remove</button>
 
         </div>
        :  
-         <button   className={`add-bag mx-auto    bg-primary-color ${layout.flexCenter} cursor-pointer gap-[.5rem] ${productComponentStyles.buttonHandler}`} onClick={hendleAddToBag}>
+         <button   className={`add-bag mx-auto    bg-primary-color cursor-pointer gap-[.5rem] ${layout.flexCenter} ${productComponentStyles.buttonHandler}`} onClick={hendleAddToBag}>
             <span  >Add Bag</span>
             <Image
             src='bag-icon.svg'
@@ -177,7 +174,7 @@ export default function Product(item) {
             className={`${productComponentStyles.iconBagButton}`}
             alt='bag'
             />
-      </button>
+        </button>
       }
       
 
