@@ -14,10 +14,6 @@ interface Dimensions{
   height: number 
 }
 
-interface DropdownCheckout{
-  drop: boolean 
-}
-
 export default function ShoppingBag( ) { 
   // width 
   const [dimensions, setDimensions] = React.useState<Dimensions>({
@@ -38,7 +34,7 @@ export default function ShoppingBag( ) {
   
   // handle close bag   
   const isOpen = useSelector((state: RootState) => state.bag.isOpen);
-  const {products,quantity,total} = useSelector((store:RootState) => store.shopping)
+  const {products} = useSelector((store:RootState) => store.shopping)
 
   const dispatch = useDispatch();
 
@@ -93,7 +89,7 @@ export default function ShoppingBag( ) {
                     <h2 className='font-[600]'>Product List</h2>
                     <div className={`flex items-center`}>
                       <p className={`${shoppingBagContainer.productList.description_size}`}>Price</p>
-                      <p className={`${shoppingBagContainer.productList.description_size} quntity_product`}  >Quantity</p>
+                      <p className={`${shoppingBagContainer.productList.description_size} quntity_product`}>Quantity</p>
                       <p className={`${shoppingBagContainer.productList.description_size}`}>Total</p>
                       <p className={`${shoppingBagContainer.productList.description_size}`}>Remove</p>
                     </div> 

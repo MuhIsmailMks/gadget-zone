@@ -45,7 +45,7 @@ export default function BagItem(item) {
             <div className={`about-product-bag h-[100%] flex items-center gap-[.01rem]  ${textStyles.verySmallInter}`}>
 
                
-               <div id='price-product ' className={`relative ${shoppingBagContainer.productList.description_size} ${layout.flexDirection}`}>
+               <div id='price-product' className={`relative ${shoppingBagContainer.productList.description_size} ${layout.flexDirection}`}>
 
                   {
                     bagItems.map((items, index) => {
@@ -69,7 +69,7 @@ export default function BagItem(item) {
              
 
               {/* quantity */}
-              <div className={`quntity_product justify-between ${shoppingBagContainer.productList.description_size} gap-[0.925rem] phone:gap-[.5rem] `}>
+              <div className={`quntity_product justify-between gap-[0.925rem] phone:gap-[.5rem]  ${shoppingBagContainer.productList.description_size}`}>
                 <button className='border-none outline-none select-none' onClick={() => lessQuantity(item.id)}>
                    <Image
                    alt='decreaseQuantity'
@@ -96,7 +96,7 @@ export default function BagItem(item) {
               </div>
               
 
-              <div id='total-price' className={`${shoppingBagContainer.productList.description_size} relative `}> 
+              <div id='total-price' className={`relative ${shoppingBagContainer.productList.description_size} `}> 
 
                   <p>  
                     {
@@ -110,7 +110,7 @@ export default function BagItem(item) {
 
               </div> 
 
-              <div className={`remove-item  relative ${shoppingBagContainer.productList.description_size}  h-[100%] flex justify-center items-center`}  >
+              <div className={`remove-item  relative h-[100%] flex justify-center items-center  ${shoppingBagContainer.productList.description_size}`}  >
                  <img src="/icons/remove-product-icon.svg" alt="" 
                  className={`${bagItem.component.removeItemIcon}`}
                  onClick={() => handleRemoveClick(item.id)}
