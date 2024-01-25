@@ -6,11 +6,8 @@ import Navigation from '../components/Navigation';
 import { dimension, layout } from '../styles';
 import Image from 'next/image';
 
-import useShoppingBag, { ShoppingBagProvider } from '../context/ShoppingBagContext'; 
-
 // data
 import dataProducts from '../data/products.json' 
-import Card from '../components/Card';
 
 // image
 import mainImage from '../images/main-image-products.webp' 
@@ -21,7 +18,7 @@ import Product from '../components/Product';
 import { useSelector } from 'react-redux';
 
 export default function products (){  
-  const {product,total,quantity} = useSelector((store) => store.shopping)
+  // const {product,total,quantity} = useSelector((store) => store.shopping)
 
   const [dimensions, setDimensions] = React.useState({
     width: window.innerWidth,
@@ -65,7 +62,6 @@ export default function products (){
              alt="main image"
            />
        </div>
-
 
         {/* products */}
        <div className={`all-products ${dimension.Wfull_hAuto} relative min-h-[100vh]`}>
