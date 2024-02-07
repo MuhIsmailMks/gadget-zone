@@ -1,6 +1,6 @@
 // bagSlice.ts
 
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 interface BagState {
   isOpen: boolean;
