@@ -1,13 +1,10 @@
 "use client";
 
-import React, { use, useEffect, useState } from "react"; 
+import React from "react"; 
 
-import Link from "next/link"; 
-
-import Image from "next/image";
 import styles from "./page.css";
 
-import layout, { dimension, textStyle } from "./styles";
+import layout, { dimension } from "./styles";
 
 
 // swiper slider
@@ -38,32 +35,14 @@ import bgSpecialProduct5 from "./images/bgspecialproduct5.webp";
 import type { RootState } from "./GlobalRedux/store";
 
 import { useSelector,useDispatch } from "react-redux"; 
-import { increment,decrement,incrementByAmount } from "./GlobalRedux/Features/counter/counterSlice";
+import { increment,decrement } from "./GlobalRedux/Features/counter/counterSlice";
 import ShoppingBag from "./components/ShoppingBag";
 import dataProducts from './data/products.json'
 import Product from "./components/Product"; 
 import { dataBenefits, dataPopularProducts } from "./components/dataComponents";
-import { benefitStylingContainer, heroProductStyling, popularProductContainerStyling, popularProductStyling, specialProductContainerStyling, specialProductStyling } from "./styles/homePageStyles";
+import { benefitStylingContainer, heroProductStyling, popularProductContainerStyling, specialProductContainerStyling } from "./styles/homePageStyles";
  
-export default function Home() { 
- 
-  // const [dimensions, setDimensions] = React.useState({
-  //   width: window.innerWidth,
-  //   height: window.innerHeight,
-  // });
-
-  // const handleResize = () => {
-  //   setDimensions({
-  //     width: window.innerWidth,
-  //     height: window.innerHeight,
-  //   });
-  // };
-
-  // React.useEffect(() => {
-  //   window.addEventListener("resize", handleResize, false);
-  // }, []);
-
-
+export default function Home() {
 
   // counter
   const count = useSelector((state:RootState) => state.counter.value)
@@ -79,7 +58,7 @@ export default function Home() {
         
         
           {/* hero products */}
-          <div className={`hero-product hidden ${heroProductStyling.heroSize} ${heroProductStyling.property}`}>
+          <div className={`hero-product  ${heroProductStyling.heroSize} ${heroProductStyling.property}`}>
             <SwiperSlides />
           </div>
 

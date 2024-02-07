@@ -52,7 +52,7 @@ export default function BagItem(item) {
                       if(items.id === item.id){ 
                         if(item.discountPrice)
                          return (
-                          <p className={`line-through w-[90%] text-[red] `} key={index}>
+                          <p className={`line-through w-[90%] text-[red] `}>
                             {
                               formatCurrency(items.discountPrice)
                             }

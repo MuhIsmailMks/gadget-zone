@@ -7,18 +7,10 @@ import dataProductsJson from '../data/products.json'
 import layout,{ dimension, textStyle ,gradient, productCardStyles} from '../styles';
 import { benefitStyling, specialProductContainerStyling, specialProductStyling,popularProductStyling } from '../styles/homePageStyles';
 
-// material UI 
-// import SvgIcon from "@mui/material/SvgIcon";  
-// import { Favorite,FavoriteBorder } from '@mui/icons-material';
-// import { pink,grey } from "@mui/material/colors"; 
-// import { ThemeProvider } from 'styled-components'; 
-
 // images
 import star from '../icons/star.svg'
 import bg_star from '../icons/empty-star.svg'
 import halfStar from '../icons/half-star.svg'
-import bagIcon from '../icons/bag-icon.svg'
-
  
 
 // swiper slider
@@ -279,8 +271,10 @@ const RatingStar = () => {
        <>
         <Image
         alt="star icon"
-        src={star}  
-        className={`${productCardStyles.ratingSizeStar}   object-contain`}
+        src='./icons/star.svg'  
+        width={10}
+        height={10}
+        className={`${productCardStyles.ratingSizeStar} object-contain`}
         priority
        />  
        </>
@@ -293,8 +287,10 @@ const RatingHalfStar = () => {
      <>
       <Image
       alt="star icon"
-      src={halfStar}  
-      className={`${productCardStyles.ratingSizeStar}   object-contain`}
+      src='./icons/half-star.svg'  
+      width={10}
+      height={10}
+      className={`${productCardStyles.ratingSizeStar} object-contain`}
       priority
     />  
      </>
@@ -307,8 +303,10 @@ const EmptyStar = () => {
        <>
         <Image
         alt="star icon"
-        src={bg_star}  
-        className={`${productCardStyles.ratingSizeStar}   object-contain`}
+        src='./icons/empty-star.svg' 
+        width={10}
+        height={10}
+        className={`${productCardStyles.ratingSizeStar} object-contain`}
         priority
       />  
        </> 
