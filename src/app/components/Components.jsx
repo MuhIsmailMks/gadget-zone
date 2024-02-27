@@ -23,8 +23,6 @@ import 'swiper/css/pagination';
 
 import { Navigation,Pagination,EffectCreative,Autoplay } from "swiper/modules";
 
-// data 
-
 // components 
 function Components() {
   return (
