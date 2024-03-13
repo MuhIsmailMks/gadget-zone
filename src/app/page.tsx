@@ -1,13 +1,8 @@
 "use client";
 
 import React from "react"; 
-
 import styles from "./page.css";
-
-import layout, { dimension } from "./styles";
-
-
-// swiper slider
+import layout, { dimension } from "./styles"; 
 
 // components
 import {
@@ -55,7 +50,6 @@ export default function Home() {
         
           <Navigation/>  
           <ShoppingBag/>
-        
         
           {/* hero products */}
           <div className={`hero-product  ${heroProductStyling.heroSize} ${heroProductStyling.property}`}>
