@@ -11,7 +11,6 @@ import { benefitStyling, specialProductContainerStyling, specialProductStyling,p
 import star from '../icons/star.svg'
 import bg_star from '../icons/empty-star.svg'
 import halfStar from '../icons/half-star.svg'
- 
 
 // swiper slider
 import { Swiper, SwiperSlide } from "swiper/react";
