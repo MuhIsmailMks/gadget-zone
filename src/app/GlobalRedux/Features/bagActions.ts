@@ -1,5 +1,4 @@
 // bagSlice.ts
-
 import { createSlice } from '@reduxjs/toolkit';
 
 interface BagState {
