@@ -5,7 +5,7 @@ import Image from "next/image";
 import {dataBenefits, dataHeroSlidesHeader,dataProducts} from './dataComponents'
 import dataProductsJson from '../data/products.json'
 import layout,{ dimension, textStyle ,gradient, productCardStyles} from '../styles';
-import { benefitStyling, specialProductContainerStyling, specialProductStyling,popularProductStyling } from '../styles/homePageStyles';
+import { benefitStyling, specialProductStyling,popularProductStyling } from '../styles/homePageStyles';
 
 // images
 import star from '../icons/star.svg'
