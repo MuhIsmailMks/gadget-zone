@@ -7,13 +7,12 @@ import layout, { dimension } from "./styles";
 // components
 import {
   SwiperSlides, 
-  SpecialProductSmallContainer,
-  SpecialProductMediumContainer,
-  SpecialProductLargeContainer,
   TitleSectionM,
   Benefits,
   PopularProduct
 } from "./components/Components";
+
+import SpecialProductSmallContainer,{SpecialProductMediumContainer,SpecialProductLargeContainer} from "./components/SpecialProducts";
    
 import Navigation from "./components/Navigation";
 // image  
@@ -67,7 +66,7 @@ export default function Home() {
 
 
             {/* special products */}
-          <div  className={`special-products hidden relative max-w-[100%] overflow-hidden  ${dimension.Wfull_hAuto}`}
+          <div  className={`special-products relative max-w-[100%] overflow-hidden  ${dimension.Wfull_hAuto}`}
           >
  
             <TitleSectionM text={'Special product'}  /> 

@@ -2,15 +2,9 @@ import React,{useState,useEffect} from 'react'
 import Image from "next/image"; 
 
 // get data from dataComponents
-import {dataBenefits, dataHeroSlidesHeader,dataProducts} from './dataComponents'
-import dataProductsJson from '../data/products.json'
+import { dataHeroSlidesHeader,dataProducts} from './dataComponents'
 import layout,{ dimension, textStyle ,gradient, productCardStyles} from '../styles';
 import { benefitStyling, specialProductStyling,popularProductStyling } from '../styles/homePageStyles';
-
-// images
-import star from '../icons/star.svg'
-import bg_star from '../icons/empty-star.svg'
-import halfStar from '../icons/half-star.svg'
 
 // swiper slider
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -168,80 +162,7 @@ export const Benefits = (benefit) => {
     </div> 
   )
 }
-
  
- 
-// special product
-export const SpecialProductSmallContainer = ({brandProduct,nameProduct,imageProduct,altImage}) => {
-  return(
-    <div className={`small-box relative cursor-pointer  ${specialProductStyling.specialProductSmall} ${specialProductStyling.specialProductPhoneSize}`}>
-
-        <div className="bg-image w-full h-full relative bg-black"></div> 
-
-          <Image src={imageProduct} alt={altImage} className={`object-contain select-none ${specialProductStyling.specialProductImageSmall} `}/>
-
-        <div className={`about-product   ${specialProductStyling.specialProductTextContainer}`}>
-            <h3 className={`${textStyle.brandSpecialProduct}`}>{brandProduct}</h3>
-            <p className={`${textStyle.nameSpecialProduct}`}>{nameProduct}</p>
-        </div>
-
-  </div>
-  )
-}
-
-export const SpecialProductMediumContainer = ({brandProduct,nameProduct,imageProduct,bgImageProduct,altImage}) => {
-  return(
-    <div className={`medium-box overflow-hidden cursor-pointer  ${specialProductStyling.specialProductMedium}  ${specialProductStyling.specialProductPhoneSize}  ${layout.flexCenter}  `}>
-
-                {/* bg image product */}
-                  <Image
-                    className="bgImage absolute left-0 top-0 w-full h-full"
-                    src={bgImageProduct}
-                    alt={altImage}
-                  />
-
-                {/*  image product */}
-                    <Image
-                    className={`image-product ${specialProductStyling.specialProductImageMedium}`}
-                    src={imageProduct}
-                   />
-
-                  <div className={`about-product  ${specialProductStyling.specialProductTextContainer}`}>
-                      <h3 className={`${textStyle.brandSpecialProduct}`}>{brandProduct}</h3>
-                      <p className={`${textStyle.nameSpecialProduct}`}>{nameProduct}</p>
-                  </div>
-              </div>
-
-  )
-}
-
-export const SpecialProductLargeContainer = ({brandProduct,nameProduct,imageProduct,bgImageProduct,altImage}) => {
-  return(
-    <div className={`large-box ${specialProductStyling.specialProductLarge} ${layout.flexCenterItemsStart} pt-[2rem] tablet:pt-[2%] phone:pt-[2%] cursor-pointer`}>
-
-                {/* bg image product */}
-                  <Image
-                    className="bgImage z-0 absolute left-0 top-0 w-full h-full"
-                    src={bgImageProduct}
-                    alt={altImage}
-                  />
-
-                {/*  image product */}
-                    <Image
-                    className={`image-product z-10  ${specialProductStyling.specialProductImageLarge}`}
-                    src={imageProduct}
-                   />
-
-                  <div className={`about-product 
-                  ${specialProductStyling.specialProductTextContainer}
-                  text-center h-[28%] s_desktop-xl_tablet:h-[20%] s-tablet:h-[80px] phone:h-[70px]`}>
-                      <h3 className={`${textStyle.brandSpecialProduct}`}>{brandProduct}</h3>
-                      <p className={`${textStyle.nameSpecialProduct}`}>{nameProduct}</p>
-                  </div>
-      </div>
-
-  )
-}
 
 // popular product
 export const PopularProduct = (product) => {
@@ -265,7 +186,7 @@ export const PopularProduct = (product) => {
 // rating product
 const RatingStar = () => {
     return(
-       <>
+       <span>
         <Image
         alt="star icon"
         src='./icons/star.svg'  
@@ -274,14 +195,14 @@ const RatingStar = () => {
         className={`${productCardStyles.ratingSizeStar} object-contain`}
         priority
        />  
-       </>
+       </span>
 
     )
 }
 
 const RatingHalfStar = () => {
   return(
-     <>
+     <span>
       <Image
       alt="star icon"
       src='./icons/half-star.svg'  
@@ -290,14 +211,14 @@ const RatingHalfStar = () => {
       className={`${productCardStyles.ratingSizeStar} object-contain`}
       priority
     />  
-     </>
+     </span>
 
   )
 }
 
 const EmptyStar = () => {
     return(
-       <>
+       <span>
         <Image
         alt="star icon"
         src='./icons/empty-star.svg' 
@@ -306,7 +227,7 @@ const EmptyStar = () => {
         className={`${productCardStyles.ratingSizeStar} object-contain`}
         priority
       />  
-       </> 
+       </span> 
     )
 }
 
