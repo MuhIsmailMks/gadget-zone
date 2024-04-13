@@ -264,8 +264,6 @@ export const RatingProduct = ({ratingVal}) => {
  
  
 
- 
-
 export default {
     Components,
     SwiperSlides,
