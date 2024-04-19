@@ -4,8 +4,7 @@ export const productCardStyles = {
     size:"overflow-hidden s-desktop:h-[auto] s-desktop:w-[230px] tablet:w-[190px] phone:w-[140px] x-phone:w-[130px]",
     property:"relative pb-[.85rem] drop-shadow-card bg-white transition-all duration-[500ms]  ease-in-out",
     priceProductContainer:` w-full relative gap-[.5rem] phone:gap-[.2em] mb-[1rem] ${layout.flexCenter} `
-}
-
+} 
 export const productComponentStyles = { 
     cardImageStyle:"w-[full] s-desktop:h-[152px] tablet:h-[135px] phone:h-[100px] relative bg-[#ECECEC] overflow-hidden",
     newProductStyle:'s-desktop:w-[42px] s-desktop:h-[18px] tablet:w-[37px] tablet:h-[18px] phone:w-[35px] phone:h-[13px] absolute text-white top-[1rem] right-0 bg-primary-color',

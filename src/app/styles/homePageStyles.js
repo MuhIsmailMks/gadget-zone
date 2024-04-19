@@ -15,8 +15,7 @@ export const benefitStyling = {
     icon:'object-contain h-[23px] w-[auto] tablet:h-[20px] phone:h-[15px]  x-phone:h-[12px] ',
     sizeContainer:'w-[171px] h-[38px] tablet:w-[150px] tablet:h-[30px] phone:w-[110px] phone:h-[24px]',
     property:' px-[0.938rem] my-[.5rem] rounded-[13px] bg-[#F2F2F2] tablet:rounded-[9px] phone:rounded-[5px] phone:px-[.3rem]'
-}
-
+} 
 
 // special product styling
 export const specialProductContainerStyling = {
